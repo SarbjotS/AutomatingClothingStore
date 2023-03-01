@@ -23,16 +23,9 @@ public class LumaStepDefs {
 
     @Then("rolls a dice depending on the number of options presented")
     public void rollsADiceDependingOnTheNumberOfOptionsPresented() {
-        
+
     }
 
-    @And("rolls a dice depending on the number of options presented and selects the option")
-    public void rollsADiceDependingOnTheNumberOfOptionsPresentedAndSelectsTheOption() {
-    }
-
-    @And("enters selects the options on the details page and adds to cart")
-    public void entersSelectsTheOptionsOnTheDetailsPageAndAddsToCart() {
-    }
 
     @And("then proceed to checkout and input shipping address")
     public void thenProceedToCheckoutAndInputShippingAddress() {
@@ -40,5 +33,52 @@ public class LumaStepDefs {
 
     @Then("the user reviews the order and submits")
     public void theUserReviewsTheOrderAndSubmits() {
+    }
+
+
+    @And("the user clicks on {string} and selects the compare button")
+    public void theUserClicksOnAndSelectsTheCompareButton(String arg0) {
+    }
+
+    @And("then the user hovers over {string} and selects the compare button")
+    public void thenTheUserHoversOverAndSelectsTheCompareButton(String arg0) {
+
+    }
+
+    @Then("the user proceeds to the compare page")
+    public void theUserProceedsToTheComparePage() {
+    }
+
+    @And("the user adds the cheaper product to the cart")
+    public void theUserAddsTheCheaperProductToTheCart() {
+    }
+    
+
+    @And("the user selects a {string} and {string} and adds the cheaper product to the cart")
+    public void theUserSelectsAAndAndAddsTheCheaperProductToTheCart(String arg0, String arg1) {
+    }
+
+    @When("the User selects the buy three tee get one free promo")
+    public void theUserSelectsTheBuyThreeTeeGetOneFreePromo() {
+    }
+
+    @And("selects the {string} they wish to buy")
+    public void selectsTheTheyWishToBuy(String arg0) {
+    }
+
+    @And("enters the options on the details page and adds to cart")
+    public void entersTheOptionsOnTheDetailsPageAndAddsToCart() {
+    }
+
+    @Then("selects the next button")
+    public void selectsTheNextButton() {
+    }
+
+    @And("the user adds first four products to the cart")
+    public void theUserAddsFirstFourProductsToTheCart() {
+    }
+
+    @Then("the user checks that they're receiving a free tee")
+    public void theUserChecksThatTheyReReceivingAFreeTee() {
     }
 }
