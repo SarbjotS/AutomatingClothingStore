@@ -1,8 +1,6 @@
 package Main;
 
-import java.util.LinkedList;
-
-public class Cart implements Customer{
+public class Cart extends Customer{
 
     public String Item;
     public String Size;
@@ -11,7 +9,9 @@ public class Cart implements Customer{
     public Customer User;
 
 
-    Cart(){}
+    public Cart(Customer _user){
+        this.User = _user;
+    }
     public Cart(String _item,String _size,int _price,String _colour, Customer _user){
         this.Item = _item;
         this.Size = _size;
@@ -19,6 +19,8 @@ public class Cart implements Customer{
         this.Colour = _colour;
         this.User = _user;
     }
+
+
 
     public String getItem() {
         return Item;

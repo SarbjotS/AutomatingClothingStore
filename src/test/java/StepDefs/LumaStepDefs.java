@@ -2,21 +2,33 @@ package StepDefs;
 
 import Main.Cart;
 import Main.Customer;
+import Main.GlobalValues;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.util.LinkedList;
+import java.util.*;
 
 import static Main.BrowserSetup.driver;
+import static Main.GlobalValues.emailUsed;
+
+
 
 public class LumaStepDefs {
+
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
         driver.get("https://www.google.com/");
-        Customer e = new Customer();
-        Cart c = new Cart("test", "test",1,"Test", e);
+        Customer e = new Customer(GlobalValues.emailUsed,"123abcD!", 0);
+        Cart c = new Cart(e);
+        c.setColour("red");
+        c.setSize("xl");
+        c.setPrice(123);
+        System.out.println("test"); //make items, colour, size arrays
+
+
+
 
 
     }
