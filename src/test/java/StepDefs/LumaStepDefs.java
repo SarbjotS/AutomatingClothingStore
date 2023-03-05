@@ -17,9 +17,11 @@ import static Main.GlobalValues.emailUsed;
 
 public class LumaStepDefs {
 
+    //Allows multiple items inside basket. Maybe make master basket and temp basket?
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
         driver.get("https://www.google.com/");
+        Cart A = new Cart();
         Cart c = new Cart();
         Customer NewCustomer = new Customer(GlobalValues.emailUsed,"123abcD!",  c);
 
@@ -27,19 +29,20 @@ public class LumaStepDefs {
         c.setSize("XL");
         c.setColour("red");
         c.setPrice(41);
-        c.cart.put(1, c);
+        A.cart.put(0,c.copy());
+        c.emptyCart();
+
        //NewCustomer.updateCart(c);
 
-        Cart D = new Cart();
-        Customer NewCustomer1 = new Customer("GlobalValues.emailUsed","123abcD!", D);
+        //Customer NewCustomer1 = new Customer("GlobalValues.emailUsed","123abcD!", D);
 
 
-        D.setItem("tue");
-        D.setSize("S");
-        D.setColour("pink");
-        D.setPrice(100);
+        c.setItem("tue");
+        c.setSize("S");
+        c.setColour("pink");
+        c.setPrice(100);
         //NewCustomer1.updateCart(D);
-
+        A.cart.put(1,c);
 
         System.out.println("test"); //make items, colour, size arrays
 

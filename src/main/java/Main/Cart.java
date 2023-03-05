@@ -9,53 +9,67 @@ import java.util.List;
 
 public class Cart extends Customer{
 
-    //public String Item;
-    //public String Size;
-    //public int Price;
-    //public String Colour;
+
     public Customer User;
 
-    public HashMap<Integer, Cart> cart;
-    public ArrayList <String> Item;
-    public ArrayList <String> Size;
-    public ArrayList <String> Colour;
-    public ArrayList <Integer> Price;
+    public HashMap<Integer, Cart> cart = new HashMap<>(10);
+    public String Item;
+    public String Size;
+    public String Colour;
+    public int Price;
     private int i = 0;
 
+    public String getItem() {
+        return Item;
+    }
+
     public void setItem(String item) {
-        Item.add(item);
+        Item = item;
+    }
+
+    public String getSize() {
+        return Size;
     }
 
     public void setSize(String size) {
-        Size.add(size);
+        Size = size;
+    }
+
+    public String getColour() {
+        return Colour;
     }
 
     public void setColour(String colour) {
-        Colour.add(colour);
+        Colour = colour;
     }
 
-    public void setPrice(Integer price) {
-        Price.add(price);
+    public int getPrice() {
+        return Price;
     }
 
-    public Cart(){
-
-        cart = new HashMap<Integer, Cart>(10);
-        Item = new ArrayList<>(10);
-        Size = new ArrayList<>(10);
-        Colour = new ArrayList<>(10);
-        Price = new ArrayList<>(10);
-
-
+    public void setPrice(int price) {
+        Price = price;
     }
 
+
+    public Cart copy(){
+        return new Cart(Item,Colour,Size,Price);
+    }
+
+    public Cart(String _item, String _colour, String _size, int _price){
+        this.Item = _item;
+        this.Colour = _colour;
+        this.Size = _size;
+        this.Price = _price;
+    }
+
+    public Cart(){}
 
     public void emptyCart(){
-        Item.clear();
-        Size.clear();
-        Colour.clear();
-        Price.clear();
-
+        Item = "";
+        Price = 0;
+        Colour = "";
+        Size = "";
     }
 
 
