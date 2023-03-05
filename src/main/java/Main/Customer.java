@@ -5,14 +5,23 @@ public class Customer {
     public int CustomerID = 0;
     public String Email = "";
     public String Password = "";
+    public Cart cart;
+    public int _customerID = 0;
 
 
 
     Customer(){}
-    public Customer(String email, String password, int _customerID) {
+    public Customer(String email, String password, Cart _cart) {
         Email = email;
         Password = password;
         CustomerID = _customerID;
+        cart = _cart;
+        _customerID++;
+
+    }
+
+    public void updateCart(Cart c){
+        cart = c;
     }
     public int getCustomerID() {
         return CustomerID;

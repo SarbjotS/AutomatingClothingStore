@@ -20,11 +20,27 @@ public class LumaStepDefs {
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
         driver.get("https://www.google.com/");
-        Customer e = new Customer(GlobalValues.emailUsed,"123abcD!", 0);
-        Cart c = new Cart(e);
+        Cart c = new Cart();
+        Customer NewCustomer = new Customer(GlobalValues.emailUsed,"123abcD!",  c);
+
+        c.setItem("wed");
+        c.setSize("XL");
         c.setColour("red");
-        c.setSize("xl");
-        c.setPrice(123);
+        c.setPrice(41);
+        c.cart.put(1, c);
+       //NewCustomer.updateCart(c);
+
+        Cart D = new Cart();
+        Customer NewCustomer1 = new Customer("GlobalValues.emailUsed","123abcD!", D);
+
+
+        D.setItem("tue");
+        D.setSize("S");
+        D.setColour("pink");
+        D.setPrice(100);
+        //NewCustomer1.updateCart(D);
+
+
         System.out.println("test"); //make items, colour, size arrays
 
 

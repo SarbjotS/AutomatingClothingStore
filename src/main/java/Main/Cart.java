@@ -1,58 +1,64 @@
 package Main;
 
+import com.beust.ah.A;
+import com.google.common.collect.Multimap;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Cart extends Customer{
 
-    public String Item;
-    public String Size;
-    public int Price;
-    public String Colour;
+    //public String Item;
+    //public String Size;
+    //public int Price;
+    //public String Colour;
     public Customer User;
 
-
-    public Cart(Customer _user){
-        this.User = _user;
-    }
-    public Cart(String _item,String _size,int _price,String _colour, Customer _user){
-        this.Item = _item;
-        this.Size = _size;
-        this.Price = _price;
-        this.Colour = _colour;
-        this.User = _user;
-    }
-
-
-
-    public String getItem() {
-        return Item;
-    }
+    public HashMap<Integer, Cart> cart;
+    public ArrayList <String> Item;
+    public ArrayList <String> Size;
+    public ArrayList <String> Colour;
+    public ArrayList <Integer> Price;
+    private int i = 0;
 
     public void setItem(String item) {
-        Item = item;
-    }
-
-    public String getSize() {
-        return Size;
+        Item.add(item);
     }
 
     public void setSize(String size) {
-        Size = size;
-    }
-
-    public int getPrice() {
-        return Price;
-    }
-
-    public void setPrice(int price) {
-        Price = price;
-    }
-
-    public String getColour() {
-        return Colour;
+        Size.add(size);
     }
 
     public void setColour(String colour) {
-        Colour = colour;
+        Colour.add(colour);
     }
+
+    public void setPrice(Integer price) {
+        Price.add(price);
+    }
+
+    public Cart(){
+
+        cart = new HashMap<Integer, Cart>(10);
+        Item = new ArrayList<>(10);
+        Size = new ArrayList<>(10);
+        Colour = new ArrayList<>(10);
+        Price = new ArrayList<>(10);
+
+
+    }
+
+
+    public void emptyCart(){
+        Item.clear();
+        Size.clear();
+        Colour.clear();
+        Price.clear();
+
+    }
+
+
 
     public Customer getUser() {
         return User;
