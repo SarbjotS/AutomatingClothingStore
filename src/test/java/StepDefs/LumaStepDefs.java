@@ -1,6 +1,7 @@
 package StepDefs;
 
 import Main.Cart;
+import Main.Customer;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,8 +15,10 @@ public class LumaStepDefs {
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
         driver.get("https://www.google.com/");
-        LinkedList<Cart>list = new LinkedList<>();
-        System.out.println("test");
+        Customer e = new Customer();
+        Cart c = new Cart("test", "test",1,"Test", e);
+
+
     }
 
     @When("the {string} decides to buy {string}")
