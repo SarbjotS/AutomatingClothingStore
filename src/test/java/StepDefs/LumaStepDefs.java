@@ -5,10 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static Main.BrowserSetup.driver;
+
 public class LumaStepDefs {
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
-        System.out.println("Test");
+        driver.get("https://www.google.com/");
     }
 
     @When("the {string} decides to buy {string}")

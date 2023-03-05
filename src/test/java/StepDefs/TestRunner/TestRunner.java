@@ -1,5 +1,6 @@
 package StepDefs.TestRunner;
 
+import Main.BrowserSetup;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -15,9 +16,11 @@ import org.openqa.selenium.WebDriver;
         stepNotifications = true,
         tags = "@Shirt"
 )
-public class TestRunner {
-   //@BeforeClass
-    //public static void SetUp(){
-        //WebDriver driver = WebDriverManager.edgedriver().create();
-    //}
+
+public class TestRunner extends BrowserSetup{
+   @BeforeClass
+    public static void SetUp(){
+       BrowserSetup.DriverSetup();
+
+    }
 }

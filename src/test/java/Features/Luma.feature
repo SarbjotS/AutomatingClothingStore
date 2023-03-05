@@ -49,9 +49,9 @@ Feature: Place orders on the dummy website Luma
 
           Examples:
             | spend | color | size |
-            | 50    | Blue  | S
+            | 50    | Blue  | S    |
 
-          @CreateAccount
+         # @CreateAccount
 
             #login using account jai41@gmail.com/Jeeper123
-          @Login
+         # @Login
