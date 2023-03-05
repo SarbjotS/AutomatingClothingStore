@@ -1,43 +1,86 @@
-package stepDefs;
+package StepDefs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.sql.Driver;
-
+import static Main.BrowserSetup.driver;
 
 public class LumaStepDefs {
+    @Given("The user is on the Luma homepage")
+    public void theUserIsOnTheLumaHomepage(){
+        driver.get("https://www.google.com/");
+    }
 
+    @When("the {string} decides to buy {string}")
+    public void theDecidesToBuy(String arg0, String arg1) {
+        System.out.println("test1");
+    }
 
-    @Then("clicks search and views the results")
-    public void clicksSearchAndViewsTheResults()  {
+    @And("the user filters how much they wish to {string}, {string} and {string}")
+    public void theUserFiltersHowMuchTheyWishToAnd(String arg0, String arg1, String arg2) {
+        
+    }
+
+    @Then("rolls a dice depending on the number of options presented")
+    public void rollsADiceDependingOnTheNumberOfOptionsPresented() {
 
     }
 
-    @Given("I am on the Expedia home page")
-    public void iAmOnTheExpediaHomePage() {
-        System.out.println("Test");
+
+    @And("then proceed to checkout and input shipping address")
+    public void thenProceedToCheckoutAndInputShippingAddress() {
     }
 
-    @And("user enters their {string} and {string}")
-    public void userEntersTheirAnd(String arg0, String arg1) {
+    @Then("the user reviews the order and submits")
+    public void theUserReviewsTheOrderAndSubmits() {
     }
 
-    @And("selects the {string} of travellers")
-    public void selectsTheOfTravellers(String arg0) {
+
+    @And("the user clicks on {string} and selects the compare button")
+    public void theUserClicksOnAndSelectsTheCompareButton(String arg0) {
+    }
+
+    @And("then the user hovers over {string} and selects the compare button")
+    public void thenTheUserHoversOverAndSelectsTheCompareButton(String arg0) {
 
     }
 
-    @And("selects their preferred flight {string}")
-    public void selectsTheirPreferredFlight(String arg0) {
+    @Then("the user proceeds to the compare page")
+    public void theUserProceedsToTheComparePage() {
     }
 
-    @When("user selects the {string} option and enters their {string} and {string}")
-    public void userSelectsTheOptionAndEntersTheirAnd(String arg0, String arg1, String arg2) {
+    @And("the user adds the cheaper product to the cart")
+    public void theUserAddsTheCheaperProductToTheCart() {
+    }
+    
+
+    @And("the user selects a {string} and {string} and adds the cheaper product to the cart")
+    public void theUserSelectsAAndAndAddsTheCheaperProductToTheCart(String arg0, String arg1) {
+    }
+
+    @When("the User selects the buy three tee get one free promo")
+    public void theUserSelectsTheBuyThreeTeeGetOneFreePromo() {
+    }
+
+    @And("selects the {string} they wish to buy")
+    public void selectsTheTheyWishToBuy(String arg0) {
+    }
+
+    @And("enters the options on the details page and adds to cart")
+    public void entersTheOptionsOnTheDetailsPageAndAddsToCart() {
+    }
+
+    @Then("selects the next button")
+    public void selectsTheNextButton() {
+    }
+
+    @And("the user adds first four products to the cart")
+    public void theUserAddsFirstFourProductsToTheCart() {
+    }
+
+    @Then("the user checks that they're receiving a free tee")
+    public void theUserChecksThatTheyReReceivingAFreeTee() {
     }
 }
