@@ -17,32 +17,34 @@ import static Main.GlobalValues.emailUsed;
 
 public class LumaStepDefs {
 
+    //1 customer can be assigned 1 cart.
+    //Customer class will parent cart class
     //Allows multiple items inside basket. Maybe make master basket and temp basket?
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
         driver.get("https://www.google.com/");
-        Cart A = new Cart();
-        Cart c = new Cart();
-        Customer NewCustomer = new Customer(GlobalValues.emailUsed,"123abcD!",  c);
+        Cart MasterCart = new Cart();
+        Cart TemporaryCart = new Cart();
+        Customer NewCustomer = new Customer(GlobalValues.emailUsed,"123abcD!",  MasterCart);
 
-        c.setItem("wed");
-        c.setSize("XL");
-        c.setColour("red");
-        c.setPrice(41);
-        A.cart.put(0,c.copy());
-        c.emptyCart();
+        TemporaryCart.setItem("wed");
+        TemporaryCart.setSize("XL");
+        TemporaryCart.setColour("red");
+        TemporaryCart.setPrice(41);
+        MasterCart.cart.put(0,TemporaryCart.copy());
+        TemporaryCart.emptyCart();
 
        //NewCustomer.updateCart(c);
 
         //Customer NewCustomer1 = new Customer("GlobalValues.emailUsed","123abcD!", D);
 
 
-        c.setItem("tue");
-        c.setSize("S");
-        c.setColour("pink");
-        c.setPrice(100);
+        TemporaryCart.setItem("tue");
+        TemporaryCart.setSize("S");
+        TemporaryCart.setColour("pink");
+        TemporaryCart.setPrice(100);
         //NewCustomer1.updateCart(D);
-        A.cart.put(1,c);
+        TemporaryCart.cart.put(1,TemporaryCart);
 
         System.out.println("test"); //make items, colour, size arrays
 
