@@ -31,7 +31,9 @@ public class LumaStepDefs {
         MasterCart.setSize("XL");
         MasterCart.setColour("red");
         MasterCart.setPrice(41);
+        MasterCart.setUser(NewCustomer);
         MasterCart.cart.put(0,MasterCart.copy());
+
         MasterCart.emptyCart();
         //MasterCart.cart.
 
@@ -39,7 +41,7 @@ public class LumaStepDefs {
 
         //Customer NewCustomer1 = new Customer("GlobalValues.emailUsed","123abcD!", D);
 
-        MasterCart.showCart(MasterCart);
+        MasterCart.showCart(NewCustomer);
 
         AddtoCart.setItem("tue");
         AddtoCart.setSize("S");

@@ -70,12 +70,11 @@ public class Cart extends Customer{
         Size = "";
     }
 
-    public void showCart(Cart cart){
+    public void showCart(Customer NewCustomer){
 
-        for (Map.Entry<Integer, Cart> entry : cart.cart.entrySet()) {
-            System.out.println(entry.getKey() + ":" + entry.getValue().toString());
-        }
-        cart.cart.forEach((key,value) -> System.out.println(key + " " + value.Price));
+
+        cart.forEach((key,value) -> System.out.println("Customer ID: " +value.getCustomerID() + "\nCustomer email: "+ NewCustomer.getEmail() +
+                "\nPrice: " + value.getPrice() + "\nSize: " + value.getSize() + "\nItem: " + value.getItem() + "\nColour: " + value.getColour()));
     }
 
 
