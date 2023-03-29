@@ -24,29 +24,30 @@ public class LumaStepDefs {
     public void theUserIsOnTheLumaHomepage(){
         driver.get("https://www.google.com/");
         Cart MasterCart = new Cart();
-        Cart TemporaryCart = new Cart();
+        Cart AddtoCart = new Cart();
         Customer NewCustomer = new Customer(GlobalValues.emailUsed,"123abcD!",  MasterCart);
 
-        TemporaryCart.setItem("wed");
-        TemporaryCart.setSize("XL");
-        TemporaryCart.setColour("red");
-        TemporaryCart.setPrice(41);
-        MasterCart.cart.put(0,TemporaryCart.copy());
-        TemporaryCart.emptyCart();
+        MasterCart.setItem("wed");
+        MasterCart.setSize("XL");
+        MasterCart.setColour("red");
+        MasterCart.setPrice(41);
+        MasterCart.cart.put(0,MasterCart.copy());
+        MasterCart.emptyCart();
+        //MasterCart.cart.
 
        //NewCustomer.updateCart(c);
 
         //Customer NewCustomer1 = new Customer("GlobalValues.emailUsed","123abcD!", D);
 
+        MasterCart.showCart(MasterCart);
 
-        TemporaryCart.setItem("tue");
-        TemporaryCart.setSize("S");
-        TemporaryCart.setColour("pink");
-        TemporaryCart.setPrice(100);
+        AddtoCart.setItem("tue");
+        AddtoCart.setSize("S");
+        AddtoCart.setColour("pink");
+        AddtoCart.setPrice(100);
         //NewCustomer1.updateCart(D);
-        TemporaryCart.cart.put(1,TemporaryCart);
+        AddtoCart.cart.put(1,AddtoCart);
 
-        System.out.println("test"); //make items, colour, size arrays
 
 
 
@@ -56,7 +57,6 @@ public class LumaStepDefs {
 
     @When("the {string} decides to buy {string}")
     public void theDecidesToBuy(String arg0, String arg1) {
-        System.out.println("test1");
     }
 
     @And("the user filters how much they wish to {string}, {string} and {string}")

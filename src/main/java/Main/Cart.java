@@ -3,9 +3,7 @@ package Main;
 import com.beust.ah.A;
 import com.google.common.collect.Multimap;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Cart extends Customer{
 
@@ -70,6 +68,14 @@ public class Cart extends Customer{
         Price = 0;
         Colour = "";
         Size = "";
+    }
+
+    public void showCart(Cart cart){
+
+        for (Map.Entry<Integer, Cart> entry : cart.cart.entrySet()) {
+            System.out.println(entry.getKey() + ":" + entry.getValue().toString());
+        }
+        cart.cart.forEach((key,value) -> System.out.println(key + " " + value.Price));
     }
 
 
