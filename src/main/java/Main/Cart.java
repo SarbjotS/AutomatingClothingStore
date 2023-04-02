@@ -72,8 +72,7 @@ public class Cart extends Customer{
 
     public void showCart(Customer NewCustomer){
 
-
-        cart.forEach((key,value) -> System.out.println("Customer ID: " +value.getCustomerID() + "\nCustomer email: "+ NewCustomer.getEmail() +
+        cart.forEach((key,value) ->  System.out.println("Customer ID: " +value.getCustomerID() + "\nCustomer email: "+ NewCustomer.getEmail() +
                 "\nPrice: " + value.getPrice() + "\nSize: " + value.getSize() + "\nItem: " + value.getItem() + "\nColour: " + value.getColour()));
     }
 

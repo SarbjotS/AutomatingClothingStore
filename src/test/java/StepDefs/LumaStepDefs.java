@@ -22,33 +22,12 @@ public class LumaStepDefs {
     //Allows multiple items inside basket. Maybe make master basket and temp basket?
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
-        driver.get("https://www.google.com/");
+        driver.get("https://magento.softwaretestingboard.com/");
         Cart MasterCart = new Cart();
-        Cart AddtoCart = new Cart();
         Customer NewCustomer = new Customer(GlobalValues.emailUsed,"123abcD!",  MasterCart);
 
-        MasterCart.setItem("wed");
-        MasterCart.setSize("XL");
-        MasterCart.setColour("red");
-        MasterCart.setPrice(41);
-        MasterCart.setUser(NewCustomer);
-        MasterCart.cart.put(0,MasterCart.copy());
 
-        MasterCart.emptyCart();
-        //MasterCart.cart.
-
-       //NewCustomer.updateCart(c);
-
-        //Customer NewCustomer1 = new Customer("GlobalValues.emailUsed","123abcD!", D);
-
-        MasterCart.showCart(NewCustomer);
-
-        AddtoCart.setItem("tue");
-        AddtoCart.setSize("S");
-        AddtoCart.setColour("pink");
-        AddtoCart.setPrice(100);
-        //NewCustomer1.updateCart(D);
-        AddtoCart.cart.put(1,AddtoCart);
+       // MasterCart.emptyCart();
 
 
 
