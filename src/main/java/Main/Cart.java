@@ -76,7 +76,13 @@ public class Cart extends Customer{
                 "\nPrice: " + value.getPrice() + "\nSize: " + value.getSize() + "\nItem: " + value.getItem() + "\nColour: " + value.getColour()));
     }
 
+    public HashMap<Integer, Cart> getCart() {
+        return cart;
+    }
 
+    public void setCart(HashMap<Integer, Cart> cart) {
+        this.cart = cart;
+    }
 
     public Customer getUser() {
         return User;

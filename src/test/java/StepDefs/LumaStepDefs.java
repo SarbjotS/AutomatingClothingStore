@@ -1,6 +1,7 @@
 package StepDefs;
 
 import Main.Cart;
+import Main.Controllers.CartController;
 import Main.Customer;
 import Main.GlobalValues;
 import io.cucumber.java.en.And;
@@ -17,27 +18,25 @@ import static Main.GlobalValues.emailUsed;
 
 public class LumaStepDefs {
 
+    private Cart MasterCart;
+    //Cart MasterCart = new Cart();
     //1 customer can be assigned 1 cart.
     //Customer class will parent cart class
     //Allows multiple items inside basket. Maybe make master basket and temp basket?
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
         driver.get("https://magento.softwaretestingboard.com/");
-        Cart MasterCart = new Cart();
-        Customer NewCustomer = new Customer(GlobalValues.emailUsed,"123abcD!",  MasterCart);
-
-
-       // MasterCart.emptyCart();
-
-
-
-
 
 
     }
 
     @When("the {string} decides to buy {string}")
-    public void theDecidesToBuy(String arg0, String arg1) {
+    public void theDecidesToBuy(String User, String Clothing) {
+        Customer NewCustomer = new Customer(User,"123abcD!",  MasterCart);
+        CartController.NavigateToItemPage(Clothing);
+        MasterCart.setItem(CartController.getClothingItem());
+
+
     }
 
     @And("the user filters how much they wish to {string}, {string} and {string}")
