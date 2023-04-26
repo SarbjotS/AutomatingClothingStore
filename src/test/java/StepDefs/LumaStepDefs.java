@@ -35,8 +35,10 @@ public class LumaStepDefs {
         Customer NewCustomer = new Customer(User,"123abcD!",  MasterCart);
         CartController.NavigateToItemPage(Clothing);
         MasterCart.setItem(CartController.getClothingItem());
+    }
 
-
+    @When("the {string} decides to buy a {string}")
+    public void theDecidesToBuyA(String User, String Clothing) {
     }
 
     @And("the user filters how much they wish to {string}, {string} and {string}")
@@ -104,4 +106,6 @@ public class LumaStepDefs {
     @Then("the user checks that they're receiving a free tee")
     public void theUserChecksThatTheyReReceivingAFreeTee() {
     }
+
+
 }

@@ -6,7 +6,7 @@ Feature: Place orders on the dummy website Luma
     #Simple buy journey
     @Shirt
     Scenario Outline:The user is purchasing a Shirt
-      When the "<User>" decides to buy "<clothes>"
+      When the "<User>" decides to buy a "<clothingOption>"
       And the user filters how much they wish to "<spend>", "<color>" and "<size>"
       And selects the "<products>" they wish to buy
       And enters the options on the details page and adds to cart
@@ -14,7 +14,7 @@ Feature: Place orders on the dummy website Luma
       Then selects the next button
       Then the user reviews the order and submits
       Examples:
-        | User                      | clothes  | products             | spend | color | size |
+        | User                      | clotheingOption  | products             | spend | color | size |
         | sarbjotsingh424@gmail.com | tanks    |Cassius Sparring Tank | 50    | Blue  | S    |
 
 
