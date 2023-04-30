@@ -12,13 +12,14 @@ import io.cucumber.java.en.When;
 import java.util.*;
 
 import static Main.BrowserSetup.driver;
+import static Main.GlobalValues.dummyPassword;
 import static Main.GlobalValues.emailUsed;
 
 
 
 public class LumaStepDefs {
 
-    private Cart MasterCart;
+    public Cart MasterCart = new Cart();
     //Cart MasterCart = new Cart();
     //1 customer can be assigned 1 cart.
     //Customer class will parent cart class
@@ -30,20 +31,23 @@ public class LumaStepDefs {
 
     }
 
-    @When("the {string} decides to buy {string}")
-    public void theDecidesToBuy(String User, String Clothing) {
-        Customer NewCustomer = new Customer(User,"123abcD!",  MasterCart);
-        CartController.NavigateToItemPage(Clothing);
-        MasterCart.setItem(CartController.getClothingItem());
-    }
 
     @When("the {string} decides to buy a {string}")
     public void theDecidesToBuyA(String User, String Clothing) {
+        Customer NewCustomer = new Customer(User,dummyPassword,  MasterCart, "Male");
+        MasterCart.setUser(NewCustomer);
+        MasterCart.setPrice(342);
+
+
+        CartController.NavigateToItemPage(Clothing, MasterCart);
+        MasterCart.setItem(CartController.getClothingItem());
+
+
     }
 
     @And("the user filters how much they wish to {string}, {string} and {string}")
     public void theUserFiltersHowMuchTheyWishToAnd(String arg0, String arg1, String arg2) {
-        
+
     }
 
     @Then("rolls a dice depending on the number of options presented")

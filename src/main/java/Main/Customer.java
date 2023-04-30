@@ -8,14 +8,28 @@ public class Customer {
     public Cart cart;
     public int _customerID = 0;
 
+    public String gender = "";
+
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+
+
 
 
     Customer(){}
-    public Customer(String email, String password, Cart _cart) {
+    public Customer(String email, String password, Cart _cart, String Gender) {
         Email = email;
         Password = password;
         CustomerID = _customerID;
         cart = _cart;
+        gender = Gender;
         _customerID++;
 
     }
