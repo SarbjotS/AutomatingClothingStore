@@ -10,14 +10,8 @@ public class CartController extends Cart {
         return null;
     }
 
-    public static void NavigateToItemPage(String clothing, Cart masterCart) {
-        //HoverOver()
-        Cart MasterCart = masterCart;
-       //If statement on malefemale nav 
-        // MasterCart.getUser().gender
 
-    }
-    public void HoverOver(){
-
+    public static SelenideElement TopNavBar(String hoverOverItem) {
+        
     }
 }

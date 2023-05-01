@@ -2,13 +2,13 @@ package Main;
 
 public class Customer {
 
-    public int CustomerID = 0;
-    public String Email = "";
-    public String Password = "";
-    public Cart cart;
-    public int _customerID = 0;
+    private int CustomerID = 0;
+    private String Email = "";
+    private String Password = "";
+    private Cart cart;
+    private int _customerID = 0;
 
-    public String gender = "";
+    private String gender = "";
 
 
     public String getGender() {

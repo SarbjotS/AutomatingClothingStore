@@ -4,6 +4,7 @@ import Main.Cart;
 import Main.Controllers.CartController;
 import Main.Customer;
 import Main.GlobalValues;
+import Main.NavigateTo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -34,12 +35,12 @@ public class LumaStepDefs {
 
     @When("the {string} decides to buy a {string}")
     public void theDecidesToBuyA(String User, String Clothing) {
-        Customer NewCustomer = new Customer(User,dummyPassword,  MasterCart, "Male");
+        Customer NewCustomer = new Customer(User,dummyPassword,  MasterCart, "Men");
         MasterCart.setUser(NewCustomer);
         MasterCart.setPrice(342);
 
 
-        CartController.NavigateToItemPage(Clothing, MasterCart);
+        NavigateTo.NavigateToItemPage(Clothing, MasterCart);
         MasterCart.setItem(CartController.getClothingItem());
 
 
