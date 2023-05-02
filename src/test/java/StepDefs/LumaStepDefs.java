@@ -1,21 +1,16 @@
 package StepDefs;
 
 import Main.Cart;
-import Main.Controllers.CartController;
+import Controllers.CartController;
 import Main.Customer;
-import Main.GlobalValues;
-import Main.NavigateTo;
+import View.NavigateTo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.util.*;
-
 import static Main.BrowserSetup.driver;
 import static Main.GlobalValues.dummyPassword;
-import static Main.GlobalValues.emailUsed;
-
 
 
 public class LumaStepDefs {
