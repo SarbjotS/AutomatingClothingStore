@@ -17,10 +17,10 @@ public class NavigateTo {
         //HoverOver()
         WebDriver driver1;
         //*[text()='Men']
-        // HoverOver(masterCart.getUser().getGender());
-        SelenideElement test = NavView.TopNavBar("Test");
-        driver.findElement(By.xpath("//*[text()='Men']")).click(); //Selenium
-        test.click();
+         HoverOver(masterCart.getUser().getGender());
+        //SelenideElement test = NavView.TopNavBar("Test");
+        //driver.findElement(By.xpath("//*[text()='Men']")).click(); //Selenium
+        //test.click();
         //java.lang.IllegalStateException: No webdriver is bound to current thread: 1. You need to call open(url) first. -> SelenideElement
         //If statement on malefemale nav
         // MasterCart.getUser().gender
@@ -29,6 +29,6 @@ public class NavigateTo {
 
     public static void HoverOver(String HoverOverItem){
         Actions action = new Actions(driver);
-        action.moveToElement(NavView.TopNavBar(HoverOverItem));
+        action.moveToElement(driver.findElement(By.xpath("//*[text()='Men']"))).perform();
     }
 }
