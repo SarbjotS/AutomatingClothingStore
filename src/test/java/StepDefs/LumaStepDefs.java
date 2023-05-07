@@ -34,7 +34,6 @@ public class LumaStepDefs {
         MasterCart.setUser(NewCustomer);
         MasterCart.setPrice(342);
 
-
         NavigateTo.NavigateToItemPage(Clothing, MasterCart);
         MasterCart.setItem(CartController.getClothingItem());
 

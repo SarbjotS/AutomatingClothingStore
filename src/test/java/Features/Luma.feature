@@ -15,7 +15,7 @@ Feature: Place orders on the dummy website Luma
       Then the user reviews the order and submits
       Examples:
         | User                      | clothingOption  | products             | spend | color | size |
-        | sarbjotsingh424@gmail.com | tanks           |Cassius Sparring Tank | 50    | Blue  | S    |
+        | sarbjotsingh424@gmail.com | Tanks           |Cassius Sparring Tank | 50    | Blue  | S    |
 
 
 

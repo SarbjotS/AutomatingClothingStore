@@ -1,6 +1,7 @@
 package StepDefs.TestRunner;
 
 import Main.BrowserSetup;
+import Main.HelperClass;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +22,8 @@ public class TestRunner extends BrowserSetup{
    @BeforeClass
     public static void SetUp(){
        BrowserSetup.DriverSetup();
+       HelperClass.SetUpProducts();
+
 
     }
 }
