@@ -35,7 +35,6 @@ public class NavigateTo {
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(By.xpath("//li[@class='"+ HelperClass.returnNavBarType(HoverOverItem, MasterCart) +"']"))).perform();
         action.moveToElement(driver.findElement(By.xpath("//li[@class='"+ HelperClass.returnNavBarType(HoverOverItem, MasterCart) +"']//*[text()='"+HelperClass.SubItem(HoverOverItem)+"']"))).perform();
+        action.click(driver.findElement(By.xpath("//li[@class='"+ HelperClass.returnNavBarType(HoverOverItem, MasterCart) +"']//*[text()='"+HoverOverItem+"']"))).perform();
     }
-}
-//li[@class="level0 nav-3 category-item level-top parent ui-menu-item"]//span[text()="Men"]
-//li[@class="level0 nav- category-item level-top parent ui-menu-item"]
+
