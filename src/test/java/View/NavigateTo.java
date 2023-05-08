@@ -18,23 +18,20 @@ import static com.codeborne.selenide.Selenide.open;
 public class NavigateTo {
 
     public static void NavigateToItemPage(String ItemWanted, Cart masterCart) {
-        HoverOver(ItemWanted, masterCart);
-        HelperClass.SetUpProducts();
-        if (HelperClass.TopProducts.contains(ItemWanted)) {
-            HoverOver("Tops", masterCart);
-        } else if (HelperClass.BottomProducts.contains(ItemWanted)) {
-            HoverOver("Bottoms", masterCart);
-        } else{
+
+        if (HelperClass.TopProducts.contains(ItemWanted) || HelperClass.BottomProducts.contains(ItemWanted)||HelperClass.MiscProducts.contains(ItemWanted)) {
+            HoverOver(ItemWanted, masterCart);
+        } else {
             throw new RuntimeException("Product wanted is not stocked.");
         }
-
-
     }
-
-    public static void HoverOver(String HoverOverItem, Cart MasterCart){
+//Adapt to Sale and not open menu for Men or Women selection
+    public static void HoverOver(String HoverOverItem, Cart MasterCart) {
         Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(By.xpath("//li[@class='"+ HelperClass.returnNavBarType(HoverOverItem, MasterCart) +"']"))).perform();
-        action.moveToElement(driver.findElement(By.xpath("//li[@class='"+ HelperClass.returnNavBarType(HoverOverItem, MasterCart) +"']//*[text()='"+HelperClass.SubItem(HoverOverItem)+"']"))).perform();
-        action.click(driver.findElement(By.xpath("//li[@class='"+ HelperClass.returnNavBarType(HoverOverItem, MasterCart) +"']//*[text()='"+HoverOverItem+"']"))).perform();
+        String NavBarOption = HelperClass.returnNavBarType(HoverOverItem, MasterCart);
+        action.moveToElement(driver.findElement(By.xpath("//li[@class='" + NavBarOption + "']"))).perform();
+        action.moveToElement(driver.findElement(By.xpath("//li[@class='" + NavBarOption + "']//*[text()='" + HelperClass.SubItem(HoverOverItem) + "']"))).perform();
+        action.click(driver.findElement(By.xpath("//li[@class='" + NavBarOption + "']//*[text()='" + HoverOverItem + "']"))).perform();
     }
+}
 

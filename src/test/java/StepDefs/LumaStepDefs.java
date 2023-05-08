@@ -3,6 +3,7 @@ package StepDefs;
 import Main.Cart;
 import Controllers.CartController;
 import Main.Customer;
+import Main.HelperClass;
 import View.NavigateTo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -33,6 +34,7 @@ public class LumaStepDefs {
         Customer NewCustomer = new Customer(User,dummyPassword,  MasterCart, "Men");
         MasterCart.setUser(NewCustomer);
         MasterCart.setPrice(342);
+        HelperClass.SetUpProducts(); //Only setup if customer is buying something
 
         NavigateTo.NavigateToItemPage(Clothing, MasterCart);
         MasterCart.setItem(CartController.getClothingItem());
