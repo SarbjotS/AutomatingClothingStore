@@ -1,3 +1,4 @@
+//Browser Setup
 package Main;
 
 import io.github.bonigarcia.wdm.WebDriverManager;

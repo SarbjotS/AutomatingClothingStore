@@ -1,3 +1,4 @@
+//Store info re. cart
 package Main;
 
 import com.google.common.collect.Multimap;

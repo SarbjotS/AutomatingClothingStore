@@ -1,3 +1,4 @@
+//Store info about customer
 package Main;
 
 public class Customer {

@@ -33,9 +33,7 @@ public class LumaStepDefs {
     public void theDecidesToBuyA(String User, String Clothing) {
         Customer NewCustomer = new Customer(User,dummyPassword,  MasterCart, "Men");
         MasterCart.setUser(NewCustomer);
-        MasterCart.setPrice(342);
         HelperClass.SetUpProducts(); //Only setup if customer is buying something
-
         NavigateTo.NavigateToItemPage(Clothing, MasterCart);
         MasterCart.setItem(CartController.getClothingItem());
 

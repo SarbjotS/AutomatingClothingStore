@@ -1,4 +1,6 @@
+//Helper class for setting up prior
 package Main;
+import Main.Controllers.NavigateWebElements;
 
 import java.util.HashSet;
 import java.util.List;
@@ -13,15 +15,15 @@ public class HelperClass {
     private static String NavBarWomen = "level0 nav-2 category-item level-top parent ui-menu-item";
     private static String NavBarMen = "level0 nav-3 category-item level-top parent ui-menu-item";
     private static String NavBarGear = "level0 nav-4 category-item level-top parent ui-menu-item";
+
+
     public static void SetUpProducts() {
-        String[] TopList = {"Women","Men","Tops","Jacket", "Hoodies and Sweatshirts", "Tees", "Tanks"};
+        String[] TopList = {"Women","Men","Tops","Jackets", "Hoodies and Sweatshirts", "Tees", "Tanks"};
         TopProducts.addAll(List.of(TopList));
         String[] BottomList = {"Women","Men","Bottoms","Pants", "Shorts"};
         BottomProducts.addAll(List.of(BottomList));
         String[] MiscItems = {"Bags", "Fitness Equipment", "Watches", "Video Download", "Sale", "What's New"};
         MiscProducts.addAll(List.of(MiscItems));
-
-
     }
 
     public static String getNavBarWomen() {
@@ -42,7 +44,7 @@ public class HelperClass {
             return getNavBarGear();
 
         }
-        return null;
+        throw new RuntimeException("This product doesn't exist");
     }
 
     public static String SubItem(String hoverOverItem) {
