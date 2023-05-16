@@ -5,7 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Wait;
 import org.w3c.dom.Text;
+
+import java.util.concurrent.TimeUnit;
 
 import static Main.BrowserSetup.driver;
 
@@ -28,6 +31,7 @@ public class NavigateWebElements {
         } else if (navBarOption.equals("What's new?")) {
             return WhatisNew;
         } else {
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             return driver.findElement(By.xpath("//*[@class='" + navBarOption + "']"));
             // return (WebElement)
         }

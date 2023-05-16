@@ -7,16 +7,15 @@ Feature: Place orders on the dummy website Luma
     @Shirt
     Scenario Outline:The user is purchasing a Shirt
       When the "<User>" decides to buy a "<clothingOption>"
-      And the user filters how much they wish to "<spend>", "<color>" and "<size>"
+      And the user uses a "<filter>"
       And selects the "<products>" they wish to buy
       And enters the options on the details page and adds to cart
       And then proceed to checkout and input shipping address
       Then selects the next button
       Then the user reviews the order and submits
       Examples:
-        | User                      | clothingOption  | products             | spend | color | size |
-        | sarbjotsingh424@gmail.com | Jackets           |Cassius Sparring Tank | 50    | Blue  | S    |
-
+        | User                      | clothingOption  | products               | filter |
+        | sarbjotsingh424@gmail.com | Jackets         |Cassius Sparring Tank   | Price   |
 
 
       #Just compare price
