@@ -2,6 +2,7 @@ package StepDefs;
 
 import Main.Cart;
 import Controllers.CartController;
+import Main.Controllers.ProductListingPage;
 import Main.Customer;
 import Main.HelperClass;
 import View.NavigateTo;
@@ -41,7 +42,11 @@ public class LumaStepDefs {
     }
 
     @And("the user filters how much they wish to {string}, {string} and {string}")
-    public void theUserFiltersHowMuchTheyWishToAnd(String arg0, String arg1, String arg2) {
+    public void theUserFiltersHowMuchTheyWishToAnd(String _Price, String _Color, String _Size) {
+        ProductListingPage.SelectFilter("Price");
+        
+        ProductListingPage.SelectFilter("Color");
+        ProductListingPage.SelectFilter("Size");
 
     }
 

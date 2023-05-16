@@ -12,6 +12,7 @@ public class HelperClass {
 
     public static HashSet<String> MiscProducts = new HashSet<>();
 
+    //Find better way to handle nav bar instead of hardcoding
     private static String NavBarWomen = "level0 nav-2 category-item level-top parent ui-menu-item";
     private static String NavBarMen = "level0 nav-3 category-item level-top parent ui-menu-item";
     private static String NavBarGear = "level0 nav-4 category-item level-top parent ui-menu-item";
