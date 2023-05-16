@@ -8,7 +8,8 @@ import static Main.BrowserSetup.driver;
 
 public class ProductListingPage {
     public static void SelectFilter(String FilterOption) {
-        driver.findElement(By.xpath("//div[text()='"+FilterOption+"']")).click();
-        driver.findElement(By.xpath("//div[text()='"+FilterOption+"']/following-sibling::*//span")).click();
+        //Add switch to select color & size
+        FilterItems.SelectFilter(FilterOption).click();
+        FilterItems.FilterItem(FilterOption).click();
     }
 }

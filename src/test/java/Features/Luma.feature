@@ -15,7 +15,7 @@ Feature: Place orders on the dummy website Luma
       Then the user reviews the order and submits
       Examples:
         | User                      | clothingOption  | products               | filter |
-        | sarbjotsingh424@gmail.com | Jackets         |Cassius Sparring Tank   | Price   |
+        | sarbjotsingh424@gmail.com | Jackets         |Cassius Sparring Tank   | Style   |
 
 
       #Just compare price
