@@ -1,3 +1,4 @@
+//Browser Setup
 package Main;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -15,12 +16,14 @@ public class BrowserSetup implements GlobalValues {
             case("edge"): driver = WebDriverManager.edgedriver().create();
             break;
             case("chrome"): driver = WebDriverManager.chromedriver().create();
+            driver.manage().window().maximize();
             break;
             case("firefox"): driver = WebDriverManager.firefoxdriver().create();
             break;
             default:
                 throw new InvalidArgumentException("Please enter a valid browser");
         }
+
 
 
     }

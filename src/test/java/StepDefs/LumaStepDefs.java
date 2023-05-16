@@ -1,26 +1,53 @@
 package StepDefs;
 
+import Main.Cart;
+import Controllers.CartController;
+import Main.Controllers.ProductListingPage;
+import Main.Customer;
+import Main.HelperClass;
+import View.NavigateTo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static Main.BrowserSetup.driver;
+import static Main.GlobalValues.dummyPassword;
+
 
 public class LumaStepDefs {
+
+    public Cart MasterCart = new Cart();
+    //Cart MasterCart = new Cart();
+    //1 customer can be assigned 1 cart.
+    //Customer class will parent cart class
+    //Allows multiple items inside basket. Maybe make master basket and temp basket?
     @Given("The user is on the Luma homepage")
     public void theUserIsOnTheLumaHomepage(){
-        driver.get("https://www.google.com/");
+        driver.get("https://magento.softwaretestingboard.com/");
+
+
     }
 
-    @When("the {string} decides to buy {string}")
-    public void theDecidesToBuy(String arg0, String arg1) {
-        System.out.println("test1");
+
+    @When("the {string} decides to buy a {string}")
+    public void theDecidesToBuyA(String User, String Clothing) {
+        Customer NewCustomer = new Customer(User,dummyPassword,  MasterCart, "Men");
+        MasterCart.setUser(NewCustomer);
+        HelperClass.SetUpProducts(); //Only setup if customer is buying something
+        NavigateTo.NavigateToItemPage(Clothing, MasterCart);
+        MasterCart.setItem(CartController.getClothingItem());
+
+
     }
 
     @And("the user filters how much they wish to {string}, {string} and {string}")
-    public void theUserFiltersHowMuchTheyWishToAnd(String arg0, String arg1, String arg2) {
+    public void theUserFiltersHowMuchTheyWishToAnd(String _Price, String _Color, String _Size) {
+        ProductListingPage.SelectFilter("Price");
         
+        ProductListingPage.SelectFilter("Color");
+        ProductListingPage.SelectFilter("Size");
+
     }
 
     @Then("rolls a dice depending on the number of options presented")
@@ -83,4 +110,6 @@ public class LumaStepDefs {
     @Then("the user checks that they're receiving a free tee")
     public void theUserChecksThatTheyReReceivingAFreeTee() {
     }
+
+
 }
