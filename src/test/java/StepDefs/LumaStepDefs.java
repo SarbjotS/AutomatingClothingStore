@@ -30,6 +30,7 @@ public class LumaStepDefs {
     }
 
 
+    //-----------------NavBar------------------//
     @When("the {string} decides to buy a {string}")
     public void theDecidesToBuyA(String User, String Clothing) {
         Customer NewCustomer = new Customer(User,dummyPassword,  MasterCart, "Men");
@@ -41,15 +42,12 @@ public class LumaStepDefs {
 
     }
 
-    @And("the user filters how much they wish to {string}, {string} and {string}")
-    public void theUserFiltersHowMuchTheyWishToAnd(String _Price, String _Color, String _Size) {
-        ProductListingPage.SelectFilter("Price");
-        
-        ProductListingPage.SelectFilter("Color");
-        ProductListingPage.SelectFilter("Size");
+    //-------------Filter-----------------//
+    @And("the user uses a {string}")
+    public void theUserUsesA(String ApplyingFilter) {
+        ProductListingPage.SelectFilter(ApplyingFilter);
 
     }
-
     @Then("rolls a dice depending on the number of options presented")
     public void rollsADiceDependingOnTheNumberOfOptionsPresented() {
 
@@ -110,6 +108,7 @@ public class LumaStepDefs {
     @Then("the user checks that they're receiving a free tee")
     public void theUserChecksThatTheyReReceivingAFreeTee() {
     }
+
 
 
 }
