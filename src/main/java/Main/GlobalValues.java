@@ -12,6 +12,8 @@ public interface GlobalValues {
 
     public int itemsInCart = 0;
 
-    String JsonFile = "StoreItems";
+    public String JsonFile = "StoreItems";
 }
+
+
 
