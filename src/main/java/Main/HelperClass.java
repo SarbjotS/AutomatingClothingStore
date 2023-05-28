@@ -17,6 +17,10 @@ public class HelperClass {
     private static String NavBarMen = "level0 nav-3 category-item level-top parent ui-menu-item";
     private static String NavBarGear = "level0 nav-4 category-item level-top parent ui-menu-item";
 
+    public static String Color = "Black";
+
+    public static String Size = "L";
+
 
     public static void SetUpProducts() {
         String[] TopList = {"Women","Men","Tops","Jackets", "Hoodies and Sweatshirts", "Tees", "Tanks"};
