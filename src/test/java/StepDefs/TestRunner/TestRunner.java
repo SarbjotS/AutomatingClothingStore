@@ -23,7 +23,6 @@ public class TestRunner extends BrowserSetup{
     public static void SetUp(){
        BrowserSetup.DriverSetup();
        HelperClass.SetUpProducts();
-
-
+       HelperClass.ParseJson();
     }
 }

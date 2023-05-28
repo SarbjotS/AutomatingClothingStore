@@ -6,7 +6,6 @@ Feature: Place orders on the dummy website Luma
     #Simple buy journey
     @Shirt
     Scenario Outline:The user is purchasing a Shirt
-      When the "<User>" decides to buy a "<clothingOption>"
       And the user uses a "<filter>"
       And selects the "<products>" they wish to buy
       And enters the options on the details page and adds to cart
@@ -21,7 +20,7 @@ Feature: Place orders on the dummy website Luma
       #Just compare price
       @CompareProducts
       Scenario Outline: The user decides to compare two products
-        When the "<User>" decides to buy "<clothes>"
+        When the "<User>" decides to buy a "<clothingOption>"
         And the user clicks on "<ProductOne>" and selects the compare button
         And then the user hovers over "<ProductTwo>" and selects the compare button
         Then the user proceeds to the compare page
@@ -30,7 +29,7 @@ Feature: Place orders on the dummy website Luma
         Then selects the next button
         Then the user reviews the order and submits
         Examples:
-          | User | clothes | ProductOne | ProductTwo | colour | size |
+          | User | clothingOption | ProductOne | ProductTwo | colour | size |
           | male | shirt | Phoebe Zipper Sweatshirt | placeholder | black | M |
 
 

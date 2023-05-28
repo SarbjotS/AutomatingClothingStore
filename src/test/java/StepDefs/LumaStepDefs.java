@@ -48,6 +48,11 @@ public class LumaStepDefs {
         ProductListingPage.SelectFilter(ApplyingFilter);
 
     }
+
+    @And("selects the {string} they wish to buy")
+    public void selectsTheTheyWishToBuy(String arg0) {
+    }
+
     @Then("rolls a dice depending on the number of options presented")
     public void rollsADiceDependingOnTheNumberOfOptionsPresented() {
 
@@ -89,9 +94,6 @@ public class LumaStepDefs {
     public void theUserSelectsTheBuyThreeTeeGetOneFreePromo() {
     }
 
-    @And("selects the {string} they wish to buy")
-    public void selectsTheTheyWishToBuy(String arg0) {
-    }
 
     @And("enters the options on the details page and adds to cart")
     public void entersTheOptionsOnTheDetailsPageAndAddsToCart() {
