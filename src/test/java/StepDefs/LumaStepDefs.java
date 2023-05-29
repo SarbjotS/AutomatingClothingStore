@@ -12,7 +12,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static Main.BrowserSetup.driver;
-import static Main.GlobalValues.dummyPassword;
+import static Main.Resources.GlobalValues.dummyPassword;
 
 
 public class LumaStepDefs {

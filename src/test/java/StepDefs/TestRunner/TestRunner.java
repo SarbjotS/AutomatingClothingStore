@@ -5,10 +5,14 @@ import Main.HelperClass;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.json.simple.parser.ParseException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -20,9 +24,9 @@ import org.openqa.selenium.WebDriver;
 
 public class TestRunner extends BrowserSetup{
    @BeforeClass
-    public static void SetUp(){
+    public static void SetUp() throws IOException, ParseException {
        BrowserSetup.DriverSetup();
        HelperClass.SetUpProducts();
-       HelperClass.ParseJson();
+       //HelperClass.ParseJson();
     }
 }

@@ -1,4 +1,4 @@
-package Main;
+package Main.Resources;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 

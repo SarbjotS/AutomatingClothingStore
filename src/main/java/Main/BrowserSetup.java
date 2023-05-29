@@ -1,6 +1,7 @@
 //Browser Setup
 package Main;
 
+import Main.Resources.GlobalValues;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;

@@ -6,6 +6,7 @@ Feature: Place orders on the dummy website Luma
     #Simple buy journey
     @Shirt
     Scenario Outline:The user is purchasing a Shirt
+      When the "<User>" decides to buy a "<clothingOption>"
       And the user uses a "<filter>"
       And selects the "<products>" they wish to buy
       And enters the options on the details page and adds to cart
