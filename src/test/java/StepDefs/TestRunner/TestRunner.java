@@ -27,6 +27,6 @@ public class TestRunner extends BrowserSetup{
     public static void SetUp() throws IOException, ParseException {
        BrowserSetup.DriverSetup();
        HelperClass.SetUpProducts();
-       //HelperClass.ParseJson();
+       HelperClass.ParseJson();
     }
 }

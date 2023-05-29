@@ -1,11 +1,10 @@
 //Helper class for setting up prior
 package Main;
-import Main.Controllers.NavigateWebElements;
-import io.cucumber.cienvironment.internal.com.eclipsesource.json.JsonArray;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
@@ -75,13 +74,11 @@ public class HelperClass {
         }
     }
     public static void ParseJson() throws IOException, ParseException {
-        Object obj;
+        JSONParser jsonParser = new JSONParser();
+        FileReader reader = new FileReader("src/JsonItemData.json");
+        JSONArray obj = (JSONArray) jsonParser.parse(reader);
 
-            JSONParser jsonParser = new JSONParser();
-            FileReader reader = new FileReader("JsonItemData.json");
-            obj = jsonParser.parse(reader);
-
-        JsonArray x = (JsonArray) obj;
+        JSONArray x =  obj;
         System.out.println(x);
 //Read JSON file
     }
