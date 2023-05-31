@@ -10,6 +10,9 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/Features/Luma.feature",
@@ -20,10 +23,8 @@ import org.openqa.selenium.WebDriver;
 
 public class TestRunner extends BrowserSetup{
    @BeforeClass
-    public static void SetUp(){
+    public static void SetUp() {
        BrowserSetup.DriverSetup();
        HelperClass.SetUpProducts();
-
-
     }
 }

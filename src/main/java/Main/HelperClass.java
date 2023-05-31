@@ -1,7 +1,8 @@
 //Helper class for setting up prior
 package Main;
-import Main.Controllers.NavigateWebElements;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 
@@ -59,6 +60,14 @@ public class HelperClass {
             return "Bags";
         }
         return null;
+    }
+
+    public static String returnSpecialFilter(String filterType){
+        if (filterType.equals("Color")) {
+            return Color;
+        }else{
+            return Size;
+        }
     }
 
 }

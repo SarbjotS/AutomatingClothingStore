@@ -1,4 +1,4 @@
-package Main;
+package Main.Resources;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -12,8 +12,7 @@ public interface GlobalValues {
 
     public int itemsInCart = 0;
 
-
-
-
 }
+
+
 

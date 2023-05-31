@@ -1,12 +1,6 @@
 package Main.Controllers;
 
-import Main.GlobalValues;
 import Main.HelperClass;
-import org.openqa.selenium.By;
-
-import java.util.logging.Filter;
-
-import static Main.BrowserSetup.driver;
 
 public class ProductListingPage {
     public static void SelectFilter(String FilterOption) {
@@ -18,7 +12,7 @@ public class ProductListingPage {
         }
 
         if (FilterOption.equals("Color") || FilterOption.equals("Size")) {
-            FilterItems.SelectColorOrSizeFilter(HelperClass.Size).click();
+            FilterItems.SelectColorOrSizeFilter(HelperClass.returnSpecialFilter(FilterOption)).click();
         } else {
             FilterItems.SelectItemToFilter(FilterOption).click();
         }
