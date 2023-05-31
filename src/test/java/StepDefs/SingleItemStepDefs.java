@@ -15,7 +15,7 @@ import static Main.BrowserSetup.driver;
 import static Main.Resources.GlobalValues.dummyPassword;
 
 
-public class LumaStepDefs {
+public class SingleItemStepDefs {
 
     public Cart MasterCart = new Cart();
     //Cart MasterCart = new Cart();
@@ -50,7 +50,8 @@ public class LumaStepDefs {
     }
 
     @And("selects the {string} they wish to buy")
-    public void selectsTheTheyWishToBuy(String arg0) {
+    public void selectsTheTheyWishToBuy(String ItemSelected) {
+        
     }
 
     @Then("rolls a dice depending on the number of options presented")
