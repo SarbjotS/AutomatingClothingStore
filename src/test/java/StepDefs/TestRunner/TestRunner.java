@@ -5,7 +5,6 @@ import Main.HelperClass;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.json.simple.parser.ParseException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -24,9 +23,8 @@ import java.io.IOException;
 
 public class TestRunner extends BrowserSetup{
    @BeforeClass
-    public static void SetUp() throws IOException, ParseException {
+    public static void SetUp() {
        BrowserSetup.DriverSetup();
        HelperClass.SetUpProducts();
-       HelperClass.ParseJson();
     }
 }

@@ -1,9 +1,5 @@
 //Helper class for setting up prior
 package Main;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -73,14 +69,6 @@ public class HelperClass {
             return Size;
         }
     }
-    public static void ParseJson() throws IOException, ParseException {
-        JSONParser jsonParser = new JSONParser();
-        FileReader reader = new FileReader("src/JsonItemData.json");
-        JSONArray obj = (JSONArray) jsonParser.parse(reader);
 
-        JSONArray x =  obj;
-        System.out.println(x);
-//Read JSON file
-    }
 }
 
