@@ -51,7 +51,13 @@ public class SingleItemStepDefs {
 
     @And("selects the {string} they wish to buy")
     public void selectsTheTheyWishToBuy(String ItemSelected) {
-        
+        ProductListingPage.SelectProduct(ItemSelected);
+
+    }
+
+    @And("enters the {string}, {string} and {string} on the details page and adds to cart")
+    public void entersTheAndOnTheDetailsPageAndAddsToCart(String Size, String Color, String Quantity) {
+
     }
 
     @Then("rolls a dice depending on the number of options presented")
