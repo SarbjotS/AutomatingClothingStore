@@ -8,6 +8,9 @@ import java.util.List;
 
 public class HelperClass {
 
+
+
+
     public static HashSet<String> TopProducts = new HashSet<>();
     public static HashSet<String> BottomProducts = new HashSet<>();
 
