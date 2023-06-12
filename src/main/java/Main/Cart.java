@@ -11,11 +11,11 @@ public class Cart extends Customer{
     public Customer User;
 
     public HashMap<Integer, String> cart = new HashMap<>(10);
-    public String Item;
-    public String Size;
-    public String Colour;
-    public int Price;
-
+    private String Item;
+    private String Size;
+    private String Colour;
+    private int Price;
+    private static int ItemsInCart;
     public String getItem() {
         return Item;
     }

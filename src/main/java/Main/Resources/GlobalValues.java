@@ -10,7 +10,7 @@ public interface GlobalValues {
 
     public String dummyPassword = "123abc";
 
-    public int itemsInCart = 0;
+
 
 }
 
