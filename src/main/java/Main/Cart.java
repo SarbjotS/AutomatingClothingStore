@@ -15,7 +15,18 @@ public class Cart extends Customer{
     private String Size;
     private String Colour;
     private int Price;
-    private static int ItemsInCart;
+
+
+    private int NumberofItems = 0;
+
+    public int getNumberofItems() {
+        return NumberofItems;
+    }
+
+    public void setNumberofItems(int itemsInCart) {
+        NumberofItems = itemsInCart;
+    }
+
     public String getItem() {
         return Item;
     }

@@ -34,10 +34,13 @@ public class SingleItemStepDefs {
     //-----------------NavBar------------------//
     @When("the {string} decides to buy a {string}")
     public void theDecidesToBuyA(String User, String Clothing) {
+        //Probably take customer setup out and move to different class
         Customer NewCustomer = new Customer(User,dummyPassword,  _MasterCart, "Men");
         _MasterCart.setUser(NewCustomer);
+
         NavigateTo.NavigateToItemPage(Clothing, _MasterCart);
         Cart.MasterCart = _MasterCart;
+
         HelperClass.SetUpProducts(); //Only setup if customer is buying something
 
     }
@@ -59,7 +62,8 @@ public class SingleItemStepDefs {
     public void entersTheAndOnTheDetailsPageAndAddsToCart(String Size, String Color, String Quantity) {
         ProductDetailsPage.SelectColor(Color);
         ProductDetailsPage.SelectQuantity(Quantity);
-
+        ProductDetailsPage.SelectSize(Size);
+        System.out.println("test");
     }
 
     @Then("rolls a dice depending on the number of options presented")

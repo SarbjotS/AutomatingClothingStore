@@ -11,6 +11,13 @@ public class ProductDetailsElements {
     }
 
     public static void setQuantity(String Quantity) {
-        driver.findElement(By.xpath("//input[@name='qty']")).sendKeys(Quantity);
+        WebElement ClearAndEnter = driver.findElement(By.xpath("//input[@name='qty']"));
+        ClearAndEnter.clear();
+        ClearAndEnter.sendKeys(Quantity);
+    }
+
+    public static void selectSize(String sizeWanted) {
+        driver.findElement(By.xpath("//div[@option-label='"+sizeWanted+"']")).click();
+
     }
 }

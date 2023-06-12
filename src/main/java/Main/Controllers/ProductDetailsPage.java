@@ -9,12 +9,24 @@ public class ProductDetailsPage {
     private static Cart _cart = Cart.MasterCart;
 
     public static void SelectSize(String SizeWanted){
-        //_cart.cart.put()
+        try{
+            ProductDetailsElements.selectSize(SizeWanted);
+        }catch (Exception e){
+            throw new RuntimeException("Size is not available");
+        }
+        _cart.setSize(SizeWanted);
+        _cart.cart.put(_cart.getNumberofItems(), _cart.getSize());
     }
+
     public static void SelectColor(String ColorWanted){
+        try{
+            ProductDetailsElements.selectColor(ColorWanted);
+        }catch (Exception e){
+            throw new RuntimeException("Color is not available");
+        }
+
         _cart.setColour(ColorWanted);
-        _cart.cart.put(0, _cart.getColour());
-        ProductDetailsElements.selectColor(ColorWanted);
+        _cart.cart.put(_cart.getNumberofItems(), _cart.getColour());
 
 //Add all items in a variable called "Item in cart" once item and specs added increment
         //MasterCart
@@ -22,7 +34,11 @@ public class ProductDetailsPage {
 
     }
     public static void SelectQuantity(String QuantityWanted){
-        ProductDetailsElements.setQuantity(QuantityWanted);
+        try{
+            ProductDetailsElements.setQuantity(QuantityWanted);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to assign quantity");
+        }
 
     }
 
