@@ -9,13 +9,13 @@ Feature: Place orders on the dummy website Luma
       When the "<User>" decides to buy a "<clothingOption>"
       And the user uses a "<filter>"
       And selects the "<products>" they wish to buy
-      And enters the options on the details page and adds to cart
+      And enters the "<size>", "<color>" and "<quantity>" on the details page and adds to cart
       And then proceed to checkout and input shipping address
       Then selects the next button
       Then the user reviews the order and submits
       Examples:
-        | User                      | clothingOption  | products                | filter |
-        | sarbjotsingh424@gmail.com | Jackets         | Cassius Sparring Tank   | Color   |
+        | User                      | clothingOption  | products                | filter | size | color | quantity |
+        | sarbjotsingh424@gmail.com | Jackets         | Kenobi Trail Jacket     | Color  | M    | Black |     3    |
 
 
       #Just compare price

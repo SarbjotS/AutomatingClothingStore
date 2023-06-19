@@ -1,5 +1,7 @@
 package Main.Controllers;
 
+import Main.Elements.FilterItems;
+import Main.Elements.ProductListingElements;
 import Main.HelperClass;
 
 public class ProductListingPage {
@@ -16,5 +18,9 @@ public class ProductListingPage {
         } else {
             FilterItems.SelectItemToFilter(FilterOption).click();
         }
+    }
+
+    public static void SelectProduct(String ItemSelected){
+        ProductListingElements.ProductSelected(ItemSelected).click();
     }
 }

@@ -2,6 +2,7 @@ package StepDefs;
 
 import Main.Cart;
 import Controllers.CartController;
+import Main.Controllers.ProductDetailsPage;
 import Main.Controllers.ProductListingPage;
 import Main.Customer;
 import Main.HelperClass;
@@ -17,7 +18,7 @@ import static Main.Resources.GlobalValues.dummyPassword;
 
 public class SingleItemStepDefs {
 
-    public Cart MasterCart = new Cart();
+    public static Cart _MasterCart = new Cart();
     //Cart MasterCart = new Cart();
     //1 customer can be assigned 1 cart.
     //Customer class will parent cart class
@@ -33,12 +34,14 @@ public class SingleItemStepDefs {
     //-----------------NavBar------------------//
     @When("the {string} decides to buy a {string}")
     public void theDecidesToBuyA(String User, String Clothing) {
-        Customer NewCustomer = new Customer(User,dummyPassword,  MasterCart, "Men");
-        MasterCart.setUser(NewCustomer);
-        HelperClass.SetUpProducts(); //Only setup if customer is buying something
-        NavigateTo.NavigateToItemPage(Clothing, MasterCart);
-        MasterCart.setItem(CartController.getClothingItem());
+        //Probably take customer setup out and move to different class
+        Customer NewCustomer = new Customer(User,dummyPassword,  _MasterCart, "Men");
+        _MasterCart.setUser(NewCustomer);
 
+        NavigateTo.NavigateToItemPage(Clothing, _MasterCart);
+        Cart.MasterCart = _MasterCart;
+
+        HelperClass.SetUpProducts(); //Only setup if customer is buying something
 
     }
 
@@ -51,7 +54,17 @@ public class SingleItemStepDefs {
 
     @And("selects the {string} they wish to buy")
     public void selectsTheTheyWishToBuy(String ItemSelected) {
-        
+        ProductListingPage.SelectProduct(ItemSelected);
+
+    }
+
+    @And("enters the {string}, {string} and {string} on the details page and adds to cart")
+    public void entersTheAndOnTheDetailsPageAndAddsToCart(String Size, String Color, String Quantity) {
+        ProductDetailsPage.SelectColor(Color);
+        ProductDetailsPage.SelectQuantity(Quantity);
+        ProductDetailsPage.SelectSize(Size);
+        ProductDetailsPage.AddToCart();
+        System.out.println("test");
     }
 
     @Then("rolls a dice depending on the number of options presented")
