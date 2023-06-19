@@ -63,6 +63,7 @@ public class SingleItemStepDefs {
         ProductDetailsPage.SelectColor(Color);
         ProductDetailsPage.SelectQuantity(Quantity);
         ProductDetailsPage.SelectSize(Size);
+        ProductDetailsPage.AddToCart();
         System.out.println("test");
     }
 

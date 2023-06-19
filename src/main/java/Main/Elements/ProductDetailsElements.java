@@ -20,4 +20,8 @@ public class ProductDetailsElements {
         driver.findElement(By.xpath("//div[@option-label='"+sizeWanted+"']")).click();
 
     }
+
+    public static void SelectAddToCart() {
+        driver.findElement(By.xpath("//button[@title ='Add to Cart']")).click();
+    }
 }

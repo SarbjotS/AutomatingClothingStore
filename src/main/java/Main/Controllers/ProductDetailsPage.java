@@ -43,4 +43,11 @@ public class ProductDetailsPage {
     }
 
 
+    public static void AddToCart() {
+        try{
+            ProductDetailsElements.SelectAddToCart();
+        }catch (Exception e){
+            throw new RuntimeException("Button is not selectable");
+        }
+    }
 }
