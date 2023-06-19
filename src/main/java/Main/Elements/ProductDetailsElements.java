@@ -24,4 +24,8 @@ public class ProductDetailsElements {
     public static void SelectAddToCart() {
         driver.findElement(By.xpath("//button[@title ='Add to Cart']")).click();
     }
+
+    public static void SelectShoppingCart() {
+        driver.findElement(By.xpath("//div[@class ='page messages']//a[text()='shopping cart']")).click();
+    }
 }
