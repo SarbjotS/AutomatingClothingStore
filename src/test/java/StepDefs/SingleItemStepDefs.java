@@ -64,17 +64,12 @@ public class SingleItemStepDefs {
         ProductDetailsPage.SelectQuantity(Quantity);
         ProductDetailsPage.SelectSize(Size);
         ProductDetailsPage.AddToCart();
-        System.out.println("test");
-    }
-
-    @Then("rolls a dice depending on the number of options presented")
-    public void rollsADiceDependingOnTheNumberOfOptionsPresented() {
-
     }
 
 
     @And("then proceed to checkout and input shipping address")
     public void thenProceedToCheckoutAndInputShippingAddress() {
+    ProductDetailsPage.SelectShoppingCart();
     }
 
     @Then("the user reviews the order and submits")

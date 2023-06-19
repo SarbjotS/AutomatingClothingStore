@@ -50,4 +50,12 @@ public class ProductDetailsPage {
             throw new RuntimeException("Button is not selectable");
         }
     }
+
+    public static void SelectShoppingCart() {
+        try{
+            ProductDetailsElements.SelectShoppingCart();
+        }catch (Exception e){
+            throw new RuntimeException("Shopping cart link not visible");
+        }
+    }
 }
