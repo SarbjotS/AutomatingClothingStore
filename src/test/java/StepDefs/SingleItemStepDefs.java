@@ -69,7 +69,7 @@ public class SingleItemStepDefs {
     @And("verify the contents of the shopping cart page")
     public void verifyTheContentsOfTheShoppingCartPage() {
         ProductDetailsPage.SelectShoppingCart();
-        ShoppingCartPage
+        ShoppingCartPage.ValidateCartPage();
     }
 
     @And("then proceed to checkout and input shipping address")
