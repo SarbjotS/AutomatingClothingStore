@@ -1,5 +1,3 @@
 # AutomatingClothingStore
-Using Selenium to automate these three DUMMY clothing websites
-https://www.saucedemo.com/
+Using Selenium to automate the following dummy website
 https://magento.softwaretestingboard.com/
-https://react-shopping-cart-67954.firebaseapp.com/
