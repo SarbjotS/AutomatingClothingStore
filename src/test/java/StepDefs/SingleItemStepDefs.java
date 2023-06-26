@@ -61,6 +61,7 @@ public class SingleItemStepDefs {
 
     @And("enters the {string}, {string} and {string} on the details page and adds to cart")
     public void entersTheAndOnTheDetailsPageAndAddsToCart(String Size, String Color, String Quantity) {
+        ProductDetailsPage.AddItemToCart();
         ProductDetailsPage.SelectColor(Color);
         ProductDetailsPage.SelectQuantity(Quantity);
         ProductDetailsPage.SelectSize(Size);

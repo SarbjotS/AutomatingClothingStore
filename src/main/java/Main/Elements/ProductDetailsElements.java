@@ -28,4 +28,8 @@ public class ProductDetailsElements {
     public static void SelectShoppingCart() {
         driver.findElement(By.xpath("//div[@class ='page messages']//a[text()='shopping cart']")).click();
     }
+
+    public static String GrabProductName(){
+        return driver.findElement(By.xpath("//span[@class='base']")).getText();
+    }
 }

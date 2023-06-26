@@ -42,6 +42,10 @@ public class ProductDetailsPage {
 
     }
 
+    public static void AddItemToCart(){
+        _cart.setItem(ProductDetailsElements.GrabProductName());
+    }
+
 
     public static void AddToCart() {
         try{

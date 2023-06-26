@@ -8,7 +8,7 @@ import static Main.BrowserSetup.driver;
 public class ShoppingCartPage {
 
     public static void ValidateCartPage(){
-        Assert.assertEquals("Item does not match",ShoppingCartElements.ValidateProduct(MasterCart.getItem()), MasterCart.getItem());
+        Assert.assertEquals("Item does not match", MasterCart.getItem(),ShoppingCartElements.ValidateProduct(MasterCart.getItem()).trim());
     }
 
 
