@@ -17,4 +17,7 @@ public class ShoppingCartPage {
     }
 
 
+    public static void ProceedToCheckout() {
+        ShoppingCartElements.SelectCheckoutButton();
+    }
 }

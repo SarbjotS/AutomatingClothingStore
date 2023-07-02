@@ -27,4 +27,7 @@ public class ShoppingCartElements {
         return driver.findElement(By.xpath("//tr[@class='item-info']//a[text()='"+ItemName+"']")).getText();
     }
 
+    public static void SelectCheckoutButton() {
+        driver.findElement(By.xpath("//span[text()='Proceed to Checkout']")).click();
+    }
 }
