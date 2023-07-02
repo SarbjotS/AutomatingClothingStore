@@ -14,7 +14,7 @@ public class Cart extends Customer{
     private String Item;
     private String Size;
     private String Colour;
-    private int Price;
+    private String Price;
 
 
     private int NumberofItems = 0;
@@ -51,11 +51,11 @@ public class Cart extends Customer{
         Colour = colour;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return Price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         Price = price;
     }
 
@@ -65,7 +65,7 @@ public class Cart extends Customer{
 
     public void emptyCart(){
         Item = "";
-        Price = 0;
+        Price = "";
         Colour = "";
         Size = "";
     }

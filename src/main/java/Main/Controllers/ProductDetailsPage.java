@@ -44,6 +44,7 @@ public class ProductDetailsPage {
 
     public static void AddItemToCart(){
         _cart.setItem(ProductDetailsElements.GrabProductName());
+        _cart.setPrice(ProductDetailsElements.GrabProductPrice());
     }
 
 

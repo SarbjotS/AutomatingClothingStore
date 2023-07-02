@@ -32,4 +32,8 @@ public class ProductDetailsElements {
     public static String GrabProductName(){
         return driver.findElement(By.xpath("//span[@class='base']")).getText();
     }
+
+    public static String GrabProductPrice() {
+        return driver.findElement(By.xpath("//span[@class='price']")).getText();
+    }
 }
