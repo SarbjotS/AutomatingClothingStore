@@ -71,6 +71,7 @@ public class SingleItemStepDefs {
     public void verifyTheContentsOfTheShoppingCartPage() {
         ProductDetailsPage.SelectShoppingCart();
         ShoppingCartPage.ValidateCartPage();
+        
     }
 
     @And("then proceed to checkout and input shipping address")
