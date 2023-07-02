@@ -13,6 +13,7 @@ public class FilterItems {
     public static WebElement SelectItemToFilter(String filterOption) {
     return driver.findElement(By.xpath("//div[text()='"+filterOption+"']/following-sibling::*//span"));
     }
+    ////dt[text()='Size']/following-sibling::dd[contains(text(),'S')]
 
     public static WebElement SelectColorOrSizeFilter(String Color){
         return driver.findElement(By.xpath("//div[@class='filter-options-content']//div[@option-label='"+Color+"']"));

@@ -10,6 +10,7 @@ Feature: Place orders on the dummy website Luma
       And the user uses a "<filter>"
       And selects the "<products>" they wish to buy
       And enters the "<size>", "<color>" and "<quantity>" on the details page and adds to cart
+      And verify the contents of the shopping cart page
       And then proceed to checkout and input shipping address
       Then selects the next button
       Then the user reviews the order and submits

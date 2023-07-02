@@ -4,6 +4,7 @@ import Main.Cart;
 import Controllers.CartController;
 import Main.Controllers.ProductDetailsPage;
 import Main.Controllers.ProductListingPage;
+import Main.Controllers.ShoppingCartPage;
 import Main.Customer;
 import Main.HelperClass;
 import View.NavigateTo;
@@ -60,16 +61,23 @@ public class SingleItemStepDefs {
 
     @And("enters the {string}, {string} and {string} on the details page and adds to cart")
     public void entersTheAndOnTheDetailsPageAndAddsToCart(String Size, String Color, String Quantity) {
+        ProductDetailsPage.AddItemToCart();
         ProductDetailsPage.SelectColor(Color);
         ProductDetailsPage.SelectQuantity(Quantity);
         ProductDetailsPage.SelectSize(Size);
         ProductDetailsPage.AddToCart();
     }
-
+    @And("verify the contents of the shopping cart page")
+    public void verifyTheContentsOfTheShoppingCartPage() {
+        ProductDetailsPage.SelectShoppingCart();
+        ShoppingCartPage.ValidateCartPage();
+        ShoppingCartPage.ProceedToCheckout();
+        System.out.println("Test");
+    }
 
     @And("then proceed to checkout and input shipping address")
     public void thenProceedToCheckoutAndInputShippingAddress() {
-    ProductDetailsPage.SelectShoppingCart();
+
     }
 
     @Then("the user reviews the order and submits")

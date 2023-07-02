@@ -19,7 +19,6 @@ public class NavigateWebElements {
     @FindBy(xpath = "//*[text()='Sale']")
     public WebElement SaleElement;
 
-    //@FindBy(xpath = )
 
     public void InitialiseElements(){
         PageFactory.initElements(driver, this);
