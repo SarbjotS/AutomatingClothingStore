@@ -72,7 +72,6 @@ public class SingleItemStepDefs {
         ProductDetailsPage.SelectShoppingCart();
         ShoppingCartPage.ValidateCartPage();
         ShoppingCartPage.ProceedToCheckout();
-        System.out.println("Test");
     }
 
     @And("then proceed to checkout and input shipping address")
