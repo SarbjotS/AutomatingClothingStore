@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public interface GlobalValues {
     public String webDriverSelected = "chrome";
-    public String emailUsed = "sarbjotsingh424@gmail.com";
+    public String emailUsed = "";
 
     public String dummyPassword = "123abc";
 
