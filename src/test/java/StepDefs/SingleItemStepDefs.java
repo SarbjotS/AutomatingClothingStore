@@ -4,6 +4,7 @@ import Main.Cart;
 import Controllers.CartController;
 import Main.Controllers.ProductDetailsPage;
 import Main.Controllers.ProductListingPage;
+import Main.Controllers.ShippingPage;
 import Main.Controllers.ShoppingCartPage;
 import Main.Customer;
 import Main.HelperClass;
@@ -76,6 +77,8 @@ public class SingleItemStepDefs {
 
     @And("then proceed to checkout and input shipping address")
     public void thenProceedToCheckoutAndInputShippingAddress() {
+        ShippingPage.InputEmail();
+
 
     }
 

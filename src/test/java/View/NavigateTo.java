@@ -1,9 +1,7 @@
 package View;
 import Main.Cart;
-import Main.Controllers.NavigateWebElements;
+import Main.Elements.NavigateWebElements;
 import Main.HelperClass;
-import com.codeborne.selenide.commands.Hover;
-import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import static Main.BrowserSetup.driver;
 

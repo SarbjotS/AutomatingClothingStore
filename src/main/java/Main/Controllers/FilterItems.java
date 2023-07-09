@@ -1,4 +1,4 @@
-package Main.Elements;
+package Main.Controllers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
