@@ -77,7 +77,14 @@ public class SingleItemStepDefs {
 
     @And("then proceed to checkout and input shipping address")
     public void thenProceedToCheckoutAndInputShippingAddress() {
-        ShippingPage.InputEmail();
+        ShippingPage.inputEmail();
+        ShippingPage.inputFirstName();
+        ShippingPage.inputLastName();
+        ShippingPage.inputStreetAddress();
+        ShippingPage.inputCity();
+        ShippingPage.SelectCountry();
+        ShippingPage.inputState();
+        ShippingPage.inputPhoneNumber();
 
 
     }
