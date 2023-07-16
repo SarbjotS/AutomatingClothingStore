@@ -10,24 +10,30 @@ public class ShippingPage {
     }
 
     public static void inputFirstName() {
-        ShippingPageElements.FirstName(MasterCart.getUser());
+        ShippingPageElements.FirstName();
     }
 
     public static void inputLastName() {
+        ShippingPageElements.LastName();
     }
 
     public static void inputStreetAddress() {
+        ShippingPageElements.StreetName();
     }
 
     public static void inputCity() {
+        ShippingPageElements.City();
     }
 
     public static void SelectCountry() {
+        ShippingPageElements.Country();
     }
 
     public static void inputState() {
+        ShippingPageElements.State();
     }
 
     public static void inputPhoneNumber() {
+        ShippingPageElements.PhoneNumber();
     }
 }
