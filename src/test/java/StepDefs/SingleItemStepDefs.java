@@ -80,11 +80,13 @@ public class SingleItemStepDefs {
         ShippingPage.inputEmail();
         ShippingPage.inputFirstName();
         ShippingPage.inputLastName();
+        ShippingPage.inputCompany();
         ShippingPage.inputStreetAddress();
         ShippingPage.SelectCountry();
         ShippingPage.inputCity();
         ShippingPage.inputState();
         ShippingPage.inputPhoneNumber();
+        ShippingPage.inputZip();
 
 
     }

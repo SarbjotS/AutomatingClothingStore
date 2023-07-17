@@ -1,5 +1,6 @@
 package Main.Elements;
 
+import Main.Controllers.ShippingPage;
 import Main.Customer;
 import net.bytebuddy.utility.RandomString;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -31,7 +32,7 @@ public class ShippingPageElements {
     }
 
     public static void ClickCountry() {
-        driver.findElement(By.xpath("//*[text()='Country']/following::div")).click();
+        //driver.findElement(By.xpath("//*[text()='Country']/following::div")).click();
 
     }
     public static void scrollCountryList() throws InterruptedException {
@@ -39,11 +40,26 @@ public class ShippingPageElements {
     }
 
     public static void City() {
+        driver.findElement(By.xpath("//*[text()='City']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
     }
 
     public static void StreetName() {
+        driver.findElement(By.xpath("//*[text()='Street Address']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
+
     }
 
     public static void LastName() {
+        driver.findElement(By.xpath("//*[text()='Last Name']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
+
+    }
+
+    public static void Company() {
+        driver.findElement(By.xpath("//*[text()='Company']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
+
+    }
+
+    public static void ZipCode() {
+        driver.findElement(By.xpath("//*[text()='Zip/Postal Code']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomNumeric(5));
+
     }
 }

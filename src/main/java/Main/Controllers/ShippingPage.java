@@ -37,4 +37,12 @@ public class ShippingPage {
     public static void inputPhoneNumber() {
         ShippingPageElements.PhoneNumber();
     }
+
+    public static void inputCompany() {
+        ShippingPageElements.Company();
+    }
+
+    public static void inputZip() {
+        ShippingPageElements.ZipCode();
+    }
 }
