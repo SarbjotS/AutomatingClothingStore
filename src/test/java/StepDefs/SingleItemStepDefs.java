@@ -76,13 +76,13 @@ public class SingleItemStepDefs {
     }
 
     @And("then proceed to checkout and input shipping address")
-    public void thenProceedToCheckoutAndInputShippingAddress() {
+    public void thenProceedToCheckoutAndInputShippingAddress() throws InterruptedException {
         ShippingPage.inputEmail();
         ShippingPage.inputFirstName();
         ShippingPage.inputLastName();
         ShippingPage.inputStreetAddress();
-        ShippingPage.inputCity();
         ShippingPage.SelectCountry();
+        ShippingPage.inputCity();
         ShippingPage.inputState();
         ShippingPage.inputPhoneNumber();
 

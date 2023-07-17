@@ -4,7 +4,13 @@ import Main.Customer;
 import net.bytebuddy.utility.RandomString;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import javax.swing.*;
 
 import static Main.BrowserSetup.driver;
 
@@ -18,12 +24,18 @@ public class ShippingPageElements {
     }
 
     public static void PhoneNumber() {
+        driver.findElement(By.xpath("//*[text()='Phone Number']/following::div")).sendKeys("021" + RandomStringUtils.randomNumeric(5));
     }
 
     public static void State() {
     }
 
-    public static void Country() {
+    public static void ClickCountry() {
+        driver.findElement(By.xpath("//*[text()='Country']/following::div")).click();
+
+    }
+    public static void scrollCountryList() throws InterruptedException {
+
     }
 
     public static void City() {

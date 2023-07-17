@@ -25,8 +25,9 @@ public class ShippingPage {
         ShippingPageElements.City();
     }
 
-    public static void SelectCountry() {
-        ShippingPageElements.Country();
+    public static void SelectCountry() throws InterruptedException {
+        ShippingPageElements.ClickCountry();
+        ShippingPageElements.scrollCountryList();
     }
 
     public static void inputState() {
