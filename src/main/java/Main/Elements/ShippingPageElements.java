@@ -16,10 +16,19 @@ import javax.swing.*;
 import static Main.BrowserSetup.driver;
 
 public class ShippingPageElements {
+
+    @FindBy(xpath = "//*[text()='Country']/following::div")
+    public static WebElement country;
+    //@FindBy(xpath = "//small[@class='copyright']")
+    //public static WebElement footer;
     public static void email(String email) {
         driver.findElement(By.xpath("//div[@class='control _with-tooltip']//input[@type='email']")).sendKeys(email);
     }
 
+    public static WebElement footer(){
+      //  return By.xpath("//small[@class='copyright']");
+        return driver.findElement(By.xpath("//small[@class='copyright']" ));
+    }
     public static void FirstName() {
        driver.findElement(By.xpath("//*[text()='First Name']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
     }
@@ -32,7 +41,7 @@ public class ShippingPageElements {
     }
 
     public static void ClickCountry() {
-        //driver.findElement(By.xpath("//*[text()='Country']/following::div")).click();
+        driver.findElement(By.xpath("//*[text()='Country']/following::div")).click();
 
     }
     public static void scrollCountryList() throws InterruptedException {
