@@ -34,7 +34,7 @@ public class ShippingPageElements {
     }
 
     public static void PhoneNumber() {
-        driver.findElement(By.xpath("//*[text()='Phone Number']/following::div")).sendKeys("021" + RandomStringUtils.randomNumeric(5));
+        driver.findElement(By.xpath("//*[text()='Phone Number']/following::input")).sendKeys("021" + RandomStringUtils.randomNumeric(5));
     }
 
     public static void State() {
@@ -45,6 +45,7 @@ public class ShippingPageElements {
 
     }
     public static void scrollCountryList() throws InterruptedException {
+
 
     }
 
@@ -70,5 +71,9 @@ public class ShippingPageElements {
     public static void ZipCode() {
         driver.findElement(By.xpath("//*[text()='Zip/Postal Code']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomNumeric(5));
 
+    }
+
+    public static void ClickNext() {
+        driver.findElement(By.xpath("//*[text()='Next']")).click();
     }
 }

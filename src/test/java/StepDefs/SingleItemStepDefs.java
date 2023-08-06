@@ -13,6 +13,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.messages.types.Product;
 
 import static Main.BrowserSetup.driver;
 import static Main.Resources.GlobalValues.dummyPassword;
@@ -67,7 +68,10 @@ public class SingleItemStepDefs {
         ProductDetailsPage.SelectQuantity(Quantity);
         ProductDetailsPage.SelectSize(Size);
         ProductDetailsPage.AddToCart();
+
+
     }
+
     @And("verify the contents of the shopping cart page")
     public void verifyTheContentsOfTheShoppingCartPage() {
         ProductDetailsPage.SelectShoppingCart();
@@ -84,9 +88,10 @@ public class SingleItemStepDefs {
         ShippingPage.inputStreetAddress();
         ShippingPage.SelectCountry();
         ShippingPage.inputCity();
-        ShippingPage.inputState();
+        //ShippingPage.inputState(); Only required if country is US
         ShippingPage.inputPhoneNumber();
         ShippingPage.inputZip();
+        ShippingPage.PressNext();
 
 
     }
