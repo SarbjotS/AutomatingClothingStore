@@ -7,6 +7,7 @@ import Main.Controllers.ProductListingPage;
 import Main.Controllers.ShippingPage;
 import Main.Controllers.ShoppingCartPage;
 import Main.Customer;
+import Main.CustomerSetup;
 import Main.HelperClass;
 import View.NavigateTo;
 import io.cucumber.java.en.And;
@@ -45,6 +46,7 @@ public class SingleItemStepDefs {
         Cart.MasterCart = _MasterCart;
 
         HelperClass.SetUpProducts(); //Only setup if customer is buying something
+        CustomerSetup.setupCustomer();
 
     }
 
