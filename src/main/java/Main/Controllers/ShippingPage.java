@@ -37,7 +37,7 @@ public class ShippingPage {
         ShippingPageElements.ClickCountry();
         SelectFirstCountry();
         ShippingPageElements.scrollCountryList();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
     }
 
@@ -73,8 +73,9 @@ public class ShippingPage {
         Thread.sleep(500);
     }
 
-    public static void PressNext() {
+    public static void PressNext() throws InterruptedException {
         ShippingPageElements.ClickNext();
+        Thread.sleep(1000);
     }
 }
 

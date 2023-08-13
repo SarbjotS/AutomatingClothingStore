@@ -11,6 +11,11 @@ public class Customer {
 
     private String gender = "";
 
+    private String firstName;
+
+    private String lastName;
+    
+
 
     public String getGender() {
         return gender;
