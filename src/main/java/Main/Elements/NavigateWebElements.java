@@ -1,5 +1,5 @@
 //Get Webelements specifically for nav bar
-package Main.Controllers;
+package Main.Elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

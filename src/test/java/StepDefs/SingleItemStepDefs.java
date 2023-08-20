@@ -4,14 +4,17 @@ import Main.Cart;
 import Controllers.CartController;
 import Main.Controllers.ProductDetailsPage;
 import Main.Controllers.ProductListingPage;
+import Main.Controllers.ShippingPage;
 import Main.Controllers.ShoppingCartPage;
 import Main.Customer;
+import Main.CustomerSetup;
 import Main.HelperClass;
 import View.NavigateTo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.messages.types.Product;
 
 import static Main.BrowserSetup.driver;
 import static Main.Resources.GlobalValues.dummyPassword;
@@ -43,6 +46,7 @@ public class SingleItemStepDefs {
         Cart.MasterCart = _MasterCart;
 
         HelperClass.SetUpProducts(); //Only setup if customer is buying something
+        CustomerSetup.setupCustomer();
 
     }
 
@@ -66,7 +70,10 @@ public class SingleItemStepDefs {
         ProductDetailsPage.SelectQuantity(Quantity);
         ProductDetailsPage.SelectSize(Size);
         ProductDetailsPage.AddToCart();
+
+
     }
+
     @And("verify the contents of the shopping cart page")
     public void verifyTheContentsOfTheShoppingCartPage() {
         ProductDetailsPage.SelectShoppingCart();
@@ -75,7 +82,19 @@ public class SingleItemStepDefs {
     }
 
     @And("then proceed to checkout and input shipping address")
-    public void thenProceedToCheckoutAndInputShippingAddress() {
+    public void thenProceedToCheckoutAndInputShippingAddress() throws InterruptedException {
+        ShippingPage.inputEmail();
+        ShippingPage.inputFirstName();
+        ShippingPage.inputLastName();
+        ShippingPage.inputCompany();
+        ShippingPage.inputStreetAddress();
+        ShippingPage.SelectCountry();
+        ShippingPage.inputCity();
+        //ShippingPage.inputState(); Only required if country is US
+        ShippingPage.inputPhoneNumber();
+        ShippingPage.inputZip();
+        ShippingPage.PressNext();
+
 
     }
 

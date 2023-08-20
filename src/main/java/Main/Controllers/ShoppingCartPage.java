@@ -12,6 +12,7 @@ public class ShoppingCartPage {
         Assert.assertEquals("Colour does not match", MasterCart.getColour(), ShoppingCartElements.ValidateColour());
         Assert.assertEquals("Size does not match", MasterCart.getSize(), ShoppingCartElements.ValidateSize());
         Assert.assertEquals("Price does not match", MasterCart.getPrice(), ShoppingCartElements.ValidatePrice());
+
         //Assert.assertEquals("Subtotal does not match", MasterCart.getPrice(), ShoppingCartElements.ValidateTotal  Price); Add running subtotal
 
     }

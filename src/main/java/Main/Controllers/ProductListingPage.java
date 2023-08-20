@@ -1,6 +1,5 @@
 package Main.Controllers;
 
-import Main.Elements.FilterItems;
 import Main.Elements.ProductListingElements;
 import Main.HelperClass;
 

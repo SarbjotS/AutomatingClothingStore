@@ -63,4 +63,5 @@ public class ProductDetailsPage {
             throw new RuntimeException("Shopping cart link not visible");
         }
     }
+
 }
