@@ -16,6 +16,16 @@ public class Cart extends Customer{
     private String Colour;
     private String Price;
 
+    public String getShippingCost() {
+        return ShippingCost;
+    }
+
+    public void setShippingCost(String shippingCost) {
+        ShippingCost = shippingCost;
+    }
+
+    private String ShippingCost;
+
 
     private int NumberofItems = 0;
 
