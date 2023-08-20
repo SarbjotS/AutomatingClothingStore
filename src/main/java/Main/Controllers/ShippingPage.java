@@ -12,11 +12,13 @@ import static Main.Cart.MasterCart;
 
 public class ShippingPage {
     public static void inputEmail() {
-        ShippingPageElements.email(MasterCart.getUser().getEmail());
+        ShippingPageElements.email();
     }
 
-    public static void inputFirstName() {
+    public static void inputFirstName() throws InterruptedException {
         ShippingPageElements.FirstName();
+        Thread.sleep(1000);
+
     }
 
     public static void inputLastName() throws InterruptedException {
@@ -36,7 +38,7 @@ public class ShippingPage {
         ShippingPage.ScrollIntoView();
         ShippingPageElements.ClickCountry();
         SelectFirstCountry();
-        ShippingPageElements.scrollCountryList();
+        //ShippingPageElements.scrollCountryList();
         Thread.sleep(5000);
 
     }

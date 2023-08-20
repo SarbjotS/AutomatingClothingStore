@@ -14,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
 import javax.swing.*;
 
 import static Main.BrowserSetup.driver;
+import static Main.Cart.MasterCart;
 
 public class ShippingPageElements {
 
@@ -21,8 +22,8 @@ public class ShippingPageElements {
     public static WebElement country;
     //@FindBy(xpath = "//small[@class='copyright']")
     //public static WebElement footer;
-    public static void email(String email) {
-        driver.findElement(By.xpath("//div[@class='control _with-tooltip']//input[@type='email']")).sendKeys(email);
+    public static void email() {
+        driver.findElement(By.xpath("//div[@class='control _with-tooltip']//input[@type='email']")).sendKeys(MasterCart.getUser().getEmail());
     }
 
     public static WebElement footer(){
@@ -30,11 +31,11 @@ public class ShippingPageElements {
         return driver.findElement(By.xpath("//small[@class='copyright']" ));
     }
     public static void FirstName() {
-       driver.findElement(By.xpath("//*[text()='First Name']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
+       driver.findElement(By.xpath("//*[text()='First Name']/following::div[@class='control']//input")).sendKeys(MasterCart.getUser().getFirstName());
     }
 
     public static void PhoneNumber() {
-        driver.findElement(By.xpath("//*[text()='Phone Number']/following::input")).sendKeys("021" + RandomStringUtils.randomNumeric(5));
+        driver.findElement(By.xpath("//*[text()='Phone Number']/following::input")).sendKeys(MasterCart.getUser().getPhoneNumber());
     }
 
     public static void State() {
@@ -44,32 +45,29 @@ public class ShippingPageElements {
         driver.findElement(By.xpath("//*[text()='Country']/following::div")).click();
 
     }
-    public static void scrollCountryList() throws InterruptedException {
-
-
-    }
+    //public static void scrollCountryList() throws InterruptedException {}
 
     public static void City() {
-        driver.findElement(By.xpath("//*[text()='City']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
+        driver.findElement(By.xpath("//*[text()='City']/following::div[@class='control']//input")).sendKeys(MasterCart.getUser().getCity());
     }
 
     public static void StreetName() {
-        driver.findElement(By.xpath("//*[text()='Street Address']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
+        driver.findElement(By.xpath("//*[text()='Street Address']/following::div[@class='control']//input")).sendKeys(MasterCart.getUser().getAddress());
 
     }
 
     public static void LastName() {
-        driver.findElement(By.xpath("//*[text()='Last Name']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
+        driver.findElement(By.xpath("//*[text()='Last Name']/following::div[@class='control']//input")).sendKeys(MasterCart.getUser().getLastName());
 
     }
 
     public static void Company() {
-        driver.findElement(By.xpath("//*[text()='Company']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomAlphabetic(8));
+        driver.findElement(By.xpath("//*[text()='Company']/following::div[@class='control']//input")).sendKeys(MasterCart.getUser().getCompanyName());
 
     }
 
     public static void ZipCode() {
-        driver.findElement(By.xpath("//*[text()='Zip/Postal Code']/following::div[@class='control']//input")).sendKeys(RandomStringUtils.randomNumeric(5));
+        driver.findElement(By.xpath("//*[text()='Zip/Postal Code']/following::div[@class='control']//input")).sendKeys(MasterCart.getUser().getZipCode());
 
     }
 
