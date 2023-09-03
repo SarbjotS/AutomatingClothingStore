@@ -1,17 +1,8 @@
 package Main.Elements;
 
-import Main.Controllers.ShippingPage;
-import Main.Customer;
-import net.bytebuddy.utility.RandomString;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-
-import javax.swing.*;
 
 import static Main.BrowserSetup.driver;
 import static Main.Cart.MasterCart;
@@ -69,6 +60,10 @@ public class ShippingPageElements {
     public static void ZipCode() {
         driver.findElement(By.xpath("//*[text()='Zip/Postal Code']/following::div[@class='control']//input")).sendKeys(MasterCart.getUser().getZipCode());
 
+    }
+
+    public static String ShippingCost(){
+        return driver.findElement(By.xpath("//span[@class='price']")).getText();
     }
 
     public static void ClickNext() {

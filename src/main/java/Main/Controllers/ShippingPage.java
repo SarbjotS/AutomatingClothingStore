@@ -79,6 +79,10 @@ public class ShippingPage {
         ShippingPageElements.ClickNext();
         Thread.sleep(1000);
     }
+
+    public static void getShippingCost() {
+        MasterCart.getUser().setShippingCost(ShippingPageElements.ShippingCost());
+    }
 }
 
 

@@ -94,6 +94,16 @@ public class Customer {
     private String phoneNumber;
     private String ZipCode;
 
+    public String getShippingCost() {
+        return ShippingCost;
+    }
+
+    public void setShippingCost(String shippingCost) {
+        ShippingCost = shippingCost;
+    }
+
+    private  String ShippingCost;
+
 
     public String getGender() {
         return gender;

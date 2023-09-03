@@ -1,7 +1,6 @@
 package StepDefs;
 
 import Main.Cart;
-import Controllers.CartController;
 import Main.Controllers.ProductDetailsPage;
 import Main.Controllers.ProductListingPage;
 import Main.Controllers.ShippingPage;
@@ -14,7 +13,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.messages.types.Product;
 
 import static Main.BrowserSetup.driver;
 import static Main.Resources.GlobalValues.dummyPassword;
@@ -93,6 +91,7 @@ public class SingleItemStepDefs {
         //ShippingPage.inputState(); Only required if country is US
         ShippingPage.inputPhoneNumber();
         ShippingPage.inputZip();
+        ShippingPage.getShippingCost();
         ShippingPage.PressNext();
 
 
@@ -100,6 +99,7 @@ public class SingleItemStepDefs {
 
     @Then("the user reviews the order and submits")
     public void theUserReviewsTheOrderAndSubmits() {
+
     }
 
 
