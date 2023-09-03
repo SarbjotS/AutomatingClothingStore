@@ -1,10 +1,7 @@
 package StepDefs;
 
 import Main.Cart;
-import Main.Controllers.ProductDetailsPage;
-import Main.Controllers.ProductListingPage;
-import Main.Controllers.ShippingPage;
-import Main.Controllers.ShoppingCartPage;
+import Main.Controllers.*;
 import Main.Customer;
 import Main.CustomerSetup;
 import Main.HelperClass;
@@ -99,6 +96,8 @@ public class SingleItemStepDefs {
 
     @Then("the user reviews the order and submits")
     public void theUserReviewsTheOrderAndSubmits() {
+        ReviewAndPayment.VerifyBillingAddress();
+        ReviewAndPayment.VerifyOrderSummary();
 
     }
 
